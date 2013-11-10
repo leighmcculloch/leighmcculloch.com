@@ -1,0 +1,62 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size:0.9em;
+	font-weight:300;
+	margin:10px;
+	line-height:1.25;
+	-webkit-text-size-adjust:120%;
+}
+.section {
+	margin:15px 0;
+}
+h1 {
+	font-size:1.5em;
+	font-weight:600;
+}
+h2 {
+	font-size:1.1em;
+	font-weight:400;
+}
+.header {
+	float:left;
+}
+.header-photo {
+	float:left;
+	margin:0 10px 0 0;
+}
+.content {
+	display:inline-block;
+	width:500px;
+}
+.projects table th {
+	text-align:left;
+	padding:5px;
+}
+.projects table td {
+	padding:5px;
+}
+.projects ul {
+	list-style:square;
+	list-style-position:inside;
+}
+.table-jobs tr:nth-child(odd) {
+	background-color: #eee;
+}
+.table-jobs tr:nth-child(1) {
+	background-color: #999;
+	color:#fff;
+}
+.table-jobs tr th:nth-child(1) {
+	width:85px;
+}
+.table-jobs tr th:nth-child(2) {
+	width:75px;
+}
+.table-jobs tr th:nth-child(3) {
+	text-align:right;
+	font-weight:bold;
+}
+.disclaimer {
+	font-size:0.8em;
+	text-align:right;
+}
