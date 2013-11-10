@@ -40,17 +40,13 @@ h2 {
 	list-style-position:inside;
 }
 .table-jobs tr:nth-child(odd) {
-	background-color: #eee;
-}
-.table-jobs tr:nth-child(1) {
-	background-color: #999;
-	color:#fff;
+	background-color: #f9f9f9;
 }
 .table-jobs tr th:nth-child(1) {
-	width:85px;
+	width:45px;
 }
 .table-jobs tr th:nth-child(2) {
-	width:75px;
+	width:115px;
 }
 .table-jobs tr th:nth-child(3) {
 	text-align:right;
