@@ -1,58 +1,73 @@
+/* Layout */
+
 body {
-	font-family: 'Open Sans', sans-serif;
+	margin:2em;
+}
+
+.page {
+	margin:auto;
+}
+
+.header .header-photo img {
+	display:block;
+	margin:0 auto;
+}
+
+.content {
+	margin:0 auto;
+	text-align:center;
+}
+
+.content-item {
+	margin:0.6em 0;
+}
+
+.content-photo-frame {
+	margin:0 auto;
+	width:202px;
+	height:202px;
+}
+
+.content-photo {
+	margin:0 auto;
+	width:200px;
+	height:200px;
+}
+
+.content-payment-sub {
+	max-width:300px;
+	margin:0 auto;
+}
+
+.footer {
+	position:absolute;
+	left:0;
+	bottom:2em;
+	width:100%;
+	text-align:center;
+}
+
+/* Styles */
+
+body {
+	font-family:'Open Sans', sans-serif;
 	font-size:0.9em;
 	font-weight:300;
-	margin:10px;
 	line-height:1.25;
 	-webkit-text-size-adjust:120%;
 }
-.section {
-	margin:15px 0;
-}
+
 h1 {
 	font-size:1.5em;
 	font-weight:600;
 }
+
 h2 {
 	font-size:1.1em;
 	font-weight:400;
 }
-.header {
-	float:left;
-}
-.header-photo {
-	float:left;
-	margin:0 10px 0 0;
-}
-.content {
-	display:inline-block;
-	width:500px;
-}
-.projects table th {
-	text-align:left;
-	padding:5px;
-}
-.projects table td {
-	padding:5px;
-}
-.projects ul {
-	list-style:square;
-	list-style-position:inside;
-}
-.table-jobs tr:nth-child(odd) {
-	background-color: #f9f9f9;
-}
-.table-jobs tr th:nth-child(1) {
-	width:45px;
-}
-.table-jobs tr th:nth-child(2) {
-	width:115px;
-}
-.table-jobs tr th:nth-child(3) {
-	text-align:right;
-	font-weight:bold;
-}
-.disclaimer {
-	font-size:0.8em;
-	text-align:right;
+
+.footer {
+	font-size:0.2em;
+	font-weight:100;
 }
