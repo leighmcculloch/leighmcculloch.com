@@ -1,0 +1,127 @@
+/* Layout */
+
+body {
+	margin:2em;
+}
+
+.page {
+	margin:auto;
+}
+
+.content {
+	margin:0 auto;
+	text-align:center;
+}
+
+.content-item {
+	margin:0.6em 0;
+}
+
+.content-photo {
+	margin:2em auto 1em auto;
+	width:200px;
+}
+
+.content-photo img {
+  border: 3px solid #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.content-payment-sub {
+	max-width:300px;
+	margin:0 auto;
+}
+
+.content-social {
+  margin:0.8em 0;
+}
+
+.content-social a {
+  display:inline-block;
+  margin:0 5px;
+}
+
+.footer {
+	position:absolute;
+	left:0;
+	bottom:2em;
+	width:100%;
+	text-align:center;
+}
+
+nowrap {
+  white-space:nowrap;
+}
+
+/* Social Icons */
+/* Made by the amazing Dawid Dapszus. Freely available at http://www.dapsz.us/socialicons. */
+
+.content-social a {
+  display:inline-block;
+  width:48px;
+  height:48px;
+  background-image:url(../images/social.png);
+}
+
+.content-social a:nth-child(1)       { background-position:  0px   0px; }
+.content-social a:nth-child(1):hover { background-position: 48px   0px; }
+
+.content-social a:nth-child(2)       { background-position:  0px 192px; }
+.content-social a:nth-child(2):hover { background-position: 48px 192px; }
+
+.content-social a:nth-child(3)       { background-position:  0px  96px; }
+.content-social a:nth-child(3):hover { background-position: 48px  96px; }
+                                                               
+.content-social a:nth-child(4)       { background-position:  0px  48px; }
+.content-social a:nth-child(4):hover { background-position: 48px  48px; }
+
+.content-social a:nth-child(5)       { background-position:  0px 144px; }
+.content-social a:nth-child(5):hover { background-position: 48px 144px; }
+
+/* Styles */
+
+body {
+	font-family:"jaf-bernina-sans", serif;
+	font-size:1.0em;
+	line-height:1.25;
+	-webkit-text-size-adjust:120%;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight:300;
+}
+
+h1 {
+	font-size:2.5em;
+	font-weight:700;
+}
+
+h2 {
+	font-size:1.1em;
+  font-weight:400;
+}
+
+.content-payment,
+.content-languages,
+.content-countries,
+.content-blogs {
+	color:#ccc;
+}
+
+.content-blogs a {
+  color:#bbb;
+  text-decoration:none;
+}
+
+.content-blogs a:hover {
+  text-decoration:underline;
+}
+
+.footer {
+	font-size:0.7em;
+	font-weight:100;
+	color:#ccc;
+}

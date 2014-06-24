@@ -1,5 +1,0 @@
-RewriteEngine On
-
-RewriteCond %{HTTP:Accept-Encoding} gzip
-RewriteCond %{REQUEST_URI}.gz -f
-RewriteRule ^(.+)$ $1.gz [L]
