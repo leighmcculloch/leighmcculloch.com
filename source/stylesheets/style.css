@@ -64,32 +64,6 @@ nowrap {
   white-space:nowrap;
 }
 
-/* Social Icons */
-/* Made by the amazing Dawid Dapszus. Freely available at http://www.dapsz.us/socialicons. */
-
-.content-social a {
-  display:inline-block;
-  width:48px;
-  height:48px;
-  background-image:url(../images/social.png);
-  background-size:96px 240px;
-}
-
-.content-social a:nth-child(1)       { background-position:  0px   0px; }
-.content-social a:nth-child(1):hover { background-position: 48px   0px; }
-
-.content-social a:nth-child(2)       { background-position:  0px 192px; }
-.content-social a:nth-child(2):hover { background-position: 48px 192px; }
-
-.content-social a:nth-child(3)       { background-position:  0px  96px; }
-.content-social a:nth-child(3):hover { background-position: 48px  96px; }
-
-.content-social a:nth-child(4)       { background-position:  0px  48px; }
-.content-social a:nth-child(4):hover { background-position: 48px  48px; }
-
-.content-social a:nth-child(5)       { background-position:  0px 144px; }
-.content-social a:nth-child(5):hover { background-position: 48px 144px; }
-
 /* Styles */
 
 body {
@@ -111,6 +85,10 @@ h2 {
   font-weight:400;
 }
 
+a {
+	color:inherit;
+}
+
 .content-payment,
 .content-languages,
 .content-countries,
@@ -118,17 +96,17 @@ h2 {
 	color:#999;
 }
 
-.content-blogs a {
-  color:#777;
-  text-decoration:none;
+.content-social a {
+	font-size:1.5em;
+	color:#999;
 }
 
-.content-blogs a:hover {
-  text-decoration:underline;
+.content-social a:hover {
+	font-size:1.5em;
+	color:#777;
 }
 
-.footer {
-	font-size:0.7em;
-	font-weight:100;
-	color:#ccc;
-}
+.content-social a:nth-child(1):hover { color:#2daae1; }
+.content-social a:nth-child(2):hover { color:#007bb6; }
+.content-social a:nth-child(3):hover { color:#000; }
+.content-social a:nth-child(4):hover { color:#fbaf1c; }
