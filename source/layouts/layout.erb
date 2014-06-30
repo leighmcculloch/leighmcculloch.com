@@ -12,13 +12,16 @@
     <meta name="viewport" content="width=520px">
 
     <meta property="og:type" content="<%= current_page.data.share_type %>" />
-    <meta property="og:title" content="<%= current_page.data.share_title %>" />
+    <meta property="og:title" content="<%= current_page.data.title %>" />
     <meta property="og:description" content="<%= current_page.data.description %>" />
     <meta property="og:url" content="<%= current_page.data.url %>" />
     <meta property="og:image" content="<%= current_page.data.share_image %>" />
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@___leigh___"/>
+    <% if current_page.data.twitter_creator %>
+    <meta name="twitter:creator" content="<%= current_page.data.twitter_creator %>"/>
+    <% end %>
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
