@@ -52,14 +52,6 @@ body {
   margin:0 5px;
 }
 
-.footer {
-	position:absolute;
-	left:0;
-	bottom:2em;
-	width:100%;
-	text-align:center;
-}
-
 nowrap {
   white-space:nowrap;
 }
@@ -86,7 +78,12 @@ h2 {
 }
 
 a {
-	color:inherit;
+	color:rgba(0, 0, 0, 1.0);
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
 }
 
 .content-payment,
