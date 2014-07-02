@@ -63,6 +63,8 @@ body {
 	font-size:1.0em;
 	line-height:1.25;
 	-webkit-text-size-adjust:120%;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
   color: rgba(0, 0, 0, 0.8);
   font-weight:300;
 }
@@ -78,6 +80,7 @@ h2 {
 }
 
 a {
+	color:inherit;
 	text-decoration:none;
 }
 
