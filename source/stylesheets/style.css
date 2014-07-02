@@ -39,7 +39,7 @@ body {
 }
 
 .content-payment-sub {
-	max-width:340px;
+	max-width:380px;
 	margin:0 auto;
 }
 
@@ -60,7 +60,7 @@ nowrap {
 
 body {
 	font-family:"Lato", serif;
-	font-size:1.0em;
+	font-size:1.1em;
 	line-height:1.25;
 	-webkit-text-size-adjust:120%;
   text-rendering: optimizeLegibility !important;
@@ -71,7 +71,7 @@ body {
 
 h1 {
 	font-size:2.5em;
-	font-weight:700;
+	font-weight:900;
 }
 
 h2 {
