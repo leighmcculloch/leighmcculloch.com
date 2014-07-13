@@ -30,7 +30,17 @@ configure :build do
   activate :imageoptim
 end
 
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.method = :git
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = 'leighmcculloch.com'
+  s3_sync.region                     = 'us-east-1'
+  s3_sync.delete                     = true
+  s3_sync.after_build                = false
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+  s3_sync.version_bucket             = false
 end
+
+# TODO invalidate on cloudfalre
