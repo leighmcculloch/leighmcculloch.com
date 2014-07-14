@@ -21,14 +21,16 @@ configure :build do
   activate :gzip
   activate :asset_hash, :ignore => [/^images\//]
   activate :relative_assets
-
-  # Requires installing image_optim extensions.
-  # Ref: https://github.com/toy/image_optim
-  # 1) `brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush`
-  # 2) Download pngout from http://www.jonof.id.au/kenutils
-  # 3) `cp pngout /usr/local/bin/pngout`
-  activate :imageoptim
 end
+
+# Requires installing image_optim extensions.
+# Ref: https://github.com/toy/image_optim
+# 1) `brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush`
+# 2) Download pngout from http://www.jonof.id.au/kenutils
+# 3) `cp pngout /usr/local/bin/pngout`
+# Also, must be placed outside :build to ensure it occurs prior to other
+# extensions below that are also triggered after build.
+# activate :imageoptim
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'leighmcculloch.com'
@@ -48,6 +50,9 @@ activate :cdn do |cdn|
     zone: 'leighmcculloch.com',
     base_urls: [ 'http://leighmcculloch.com' ]
   }
+  # cdn.cloudfront = {
+  #   distribution_id: 'EK0GC71RZUHDM'
+  # }
   cdn.filter = /\.html$/
   cdn.after_build = true
 end
