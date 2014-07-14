@@ -43,4 +43,11 @@ activate :s3_sync do |s3_sync|
   s3_sync.version_bucket             = false
 end
 
-# TODO invalidate on cloudfalre
+activate :cdn do |cdn|
+  cdn.cloudflare = {
+    zone: 'leighmcculloch.com',
+    base_urls: [ 'http://leighmcculloch.com' ]
+  }
+  cdn.filter = /\.html$/
+  cdn.after_build = true
+end
