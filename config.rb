@@ -23,6 +23,13 @@ configure :build do
   activate :relative_assets
 end
 
+activate :webp do |webp|
+  webp.conversion_options = {
+    "images/*.png" => {lossy: true},
+  }
+  webp.ignore = /^((?!\.png$).)*$/i
+end
+
 # Requires installing image_optim extensions.
 # Ref: https://github.com/toy/image_optim
 # 1) `brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush`
@@ -30,7 +37,7 @@ end
 # 3) `cp pngout /usr/local/bin/pngout`
 # Also, must be placed outside :build to ensure it occurs prior to other
 # extensions below that are also triggered after build.
-# activate :imageoptim
+activate :imageoptim
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'leighmcculloch.com'
@@ -46,13 +53,27 @@ activate :s3_sync do |s3_sync|
 end
 
 activate :cdn do |cdn|
+  # leighmcculloch.com
   cdn.cloudflare = {
     zone: 'leighmcculloch.com',
-    base_urls: [ 'http://leighmcculloch.com' ]
+    base_urls: ['http://leighmcculloch.com']
   }
-  # cdn.cloudfront = {
-  #   distribution_id: 'EK0GC71RZUHDM'
-  # }
+
+  # cloudfront.leighmcculloch.com
+  cdn.cloudfront = {
+    distribution_id: 'EK0GC71RZUHDM'
+  }
+
+  # fastly.leighmcculloch.com
+  cdn.fastly = {
+    base_urls: ['http://fastly.leighmcculloch.com']
+  }
+
+  # maxcdn.leighmcculloch.com
+  cdn.maxcdn = {
+    zone_id: '172766'
+  }
+
   cdn.filter = /\.html$/
   cdn.after_build = true
 end
