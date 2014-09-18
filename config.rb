@@ -25,9 +25,9 @@ end
 
 activate :webp do |webp|
   webp.conversion_options = {
-    "images/*.png" => {lossy: true},
+    "images/*.jpg" => {lossy: true},
   }
-  webp.ignore = /^((?!\.png$).)*$/i
+  webp.ignore = /^((?!\.jpg$).)*$/i
 end
 
 # Requires installing image_optim extensions.
@@ -43,7 +43,7 @@ activate :imageoptim
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'leighmcculloch.com'
   s3_sync.region                     = 'us-east-1'
-  s3_sync.delete                     = true
+  s3_sync.delete                     = false
   s3_sync.after_build                = true
   s3_sync.prefer_gzip                = true
   s3_sync.path_style                 = true

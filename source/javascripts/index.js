@@ -1,9 +1,11 @@
-//= require "_tire"
-//= require "_moment"
+//= require "_zepto.min"
+//= require "_modernizr.min"
 
-tire.ready(function(){
-  start = moment('2005-12-05 09:00', 'YYYY-MM-DD HH:mm');
-  now = moment();
-  from = now.from(start, true)
-  tire('.content-intro-period').html(from);
-});
+// Modernizr.on('webp', function (result) {
+//   var $img = $('img.webp');
+//   if (result) {
+//     $img.attr('src', $img.data('webp'));
+//   } else {
+//     $img.attr('src', $img.data('alt'));
+//   }
+// });
