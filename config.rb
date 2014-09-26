@@ -65,16 +65,6 @@ activate :sync do |sync|
   sync.after_build = true
 end
 
-# Sync with MaxCDN Push Zone
-activate :deploy do |deploy|
-  deploy.method   = :sftp
-  deploy.host     = "ftp.#{ENV['MAXCDN_PUSH_USERNAME']}.#{ENV['MAXCDN_ALIAS']}.netdna-cdn.com"
-  deploy.port     = 22
-  deploy.path     = "/public_html"
-  deploy.user     = "#{ENV['MAXCDN_PUSH_USERNAME']}.#{ENV['MAXCDN_ALIAS']}"
-  deploy.password = ENV['MAXCDN_PUSH_PASSWORD']
-end
-
 activate :cdn do |cdn|
   # leighmcculloch.com
   cdn.cloudflare = {
