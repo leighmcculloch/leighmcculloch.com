@@ -1,9 +1,6 @@
 /*
  *= require _reset
- *= require _font-lato-900
- *= require _font-lato-400
- *= require _font-lato-300
- *= require _font-icons
+ *= require _fonts
  */
 
 /* Layout */
@@ -34,11 +31,7 @@ body {
 	width:200px;
 	height:200px;
   border: 3px solid #fff;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
   border-radius: 100%;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
@@ -105,8 +98,6 @@ a.button-link:hover {
 	background-color:rgba(0, 0, 0, 0.8);
 	color:#fff;
 	text-decoration:none;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
@@ -130,4 +121,3 @@ a.button-link:hover {
 .content-social a:nth-child(1):hover { color:#2daae1; }
 .content-social a:nth-child(2):hover { color:#007bb6; }
 .content-social a:nth-child(3):hover { color:#000; }
-.content-social a:nth-child(4):hover { color:#fbaf1c; }
