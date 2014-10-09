@@ -19,15 +19,12 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :gzip
-  activate :asset_hash, :ignore => [/^images\//]
+  activate :asset_hash, :ignore => [/\.(jpg|png)$/]
   activate :relative_assets
 end
 
 activate :webp do |webp|
-  webp.conversion_options = {
-    "images/*.jpg" => {lossy: true},
-  }
-  webp.ignore = /^((?!\.jpg$).)*$/i
+  webp.ignore = /^((?!c-circle-400\.jpg$).)*$/i
 end
 
 # Requires installing image_optim extensions.
@@ -94,5 +91,5 @@ activate :cdn do |cdn|
   }
 
   cdn.filter = /\.html$/
-  cdn.after_build = true
+  cdn.after_build = false
 end
