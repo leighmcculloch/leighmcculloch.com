@@ -3,7 +3,7 @@ compass_config do |config|
 end
 
 configure :development do
-  activate :livereload
+  # activate :livereload
 end
 
 set :css_dir, 'stylesheets'
