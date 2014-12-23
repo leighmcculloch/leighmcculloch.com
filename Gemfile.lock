@@ -164,8 +164,6 @@ GEM
     middleman-sync (3.0.12)
       asset_sync (~> 1.0.0)
       middleman-core (>= 3.0.0)
-    middleman-webp (0.2.5)
-      middleman-core (~> 3.3.2)
     mime-types (2.3)
     mini_portile (0.6.0)
     minitest (5.4.0)
@@ -236,4 +234,3 @@ DEPENDENCIES
   middleman-minify-html
   middleman-s3_sync
   middleman-sync
-  middleman-webp
