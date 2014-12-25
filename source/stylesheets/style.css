@@ -24,15 +24,18 @@ body {
 
 .content-photo {
 	margin:2em auto 1em auto;
-	width:200px;
-}
-
-.content-photo img {
-	width:200px;
-	height:200px;
+  width:200px;
+  height:200px;
   border: 3px solid #fff;
   border-radius: 100%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background-image:url('../images/c-circle-200.jpg');  
+}
+
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .content-photo {
+    background-image:url('../images/c-circle-400.jpg');
+  }
 }
 
 .content-about,

@@ -47,16 +47,16 @@ activate :s3_sync do |s3_sync|
 end
 
 # Sync with Rackspace
-# activate :sync do |sync|
-#   sync.fog_provider = 'Rackspace'
-#   sync.fog_directory = 'leighmcculloch.com'
-#   sync.fog_region = 'DFW'
-#   sync.rackspace_username = ENV['RACKSPACE_USERNAME']
-#   sync.rackspace_api_key = ENV['RACKSPACE_API_KEY']
-#   sync.existing_remote_files = 'delete'
-#   sync.gzip_compression = true
-#   sync.after_build = true
-# end
+activate :sync do |sync|
+  sync.fog_provider = 'Rackspace'
+  sync.fog_directory = 'leighmcculloch.com'
+  sync.fog_region = 'DFW'
+  sync.rackspace_username = ENV['RACKSPACE_USERNAME']
+  sync.rackspace_api_key = ENV['RACKSPACE_API_KEY']
+  sync.existing_remote_files = 'delete'
+  sync.gzip_compression = true
+  sync.after_build = false
+end
 
 activate :cdn do |cdn|
   # leighmcculloch.com
@@ -65,10 +65,10 @@ activate :cdn do |cdn|
     base_urls: ['http://leighmcculloch.com']
   }
 
-  # # cloudfront.leighmcculloch.com
-  # cdn.cloudfront = {
-  #   distribution_id: 'EK0GC71RZUHDM'
-  # }
+  # cloudfront.leighmcculloch.com
+  cdn.cloudfront = {
+    distribution_id: 'EK0GC71RZUHDM'
+  }
 
   # # fastly.leighmcculloch.com
   # cdn.fastly = {
@@ -80,11 +80,11 @@ activate :cdn do |cdn|
   #   zone_id: '172766'
   # }
 
-  # # rackspace.leighmcculloch.com
-  # cdn.rackspace = {
-  #   region: 'DFW',
-  #   container: 'leighmcculloch.com'
-  # }
+  # rackspace.leighmcculloch.com
+  cdn.rackspace = {
+    region: 'DFW',
+    container: 'leighmcculloch.com'
+  }
 
   cdn.filter = /^index\.html$/
   cdn.after_build = false
