@@ -58,6 +58,10 @@ activate :sync do |sync|
   sync.after_build = false
 end
 
+after_s3_sync do |files_by_status|
+  cdn_invalidate(files_by_status[:updated])
+end
+
 activate :cdn do |cdn|
   # leighmcculloch.com
   cdn.cloudflare = {
@@ -87,5 +91,5 @@ activate :cdn do |cdn|
   }
 
   cdn.filter = /^index\.html$/
-  cdn.after_build = true
+  cdn.after_build = false
 end
