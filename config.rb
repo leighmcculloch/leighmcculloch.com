@@ -70,9 +70,9 @@ activate :cdn do |cdn|
   }
 
   # cloudfront.leighmcculloch.com
-  cdn.cloudfront = {
-    distribution_id: 'EK0GC71RZUHDM'
-  }
+  # cdn.cloudfront = {
+  #   distribution_id: 'EK0GC71RZUHDM'
+  # }
 
   # # fastly.leighmcculloch.com
   # cdn.fastly = {
