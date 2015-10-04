@@ -9,6 +9,10 @@ body {
 	margin:2em;
 }
 
+.camouflage {
+  color: inherit;
+}
+
 .page {
 	margin:auto;
 }
@@ -29,11 +33,8 @@ body {
   border: 3px solid #fff;
   border-radius: 100%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  background-image:url('../images/c-circle-200.jpg');  
-}
-
-@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .content-photo {
+  background-image:url('../images/c-circle-200.jpg');
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
     background-image:url('../images/c-circle-400.jpg');
   }
 }
