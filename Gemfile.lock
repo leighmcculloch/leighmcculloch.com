@@ -134,8 +134,8 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 3.3.12)
-  middleman-imageoptim
-  middleman-minify-html
+  middleman-imageoptim (~> 0.2.1)
+  middleman-minify-html (~> 3.4.1)
 
 BUNDLED WITH
    1.12.3
