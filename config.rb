@@ -14,16 +14,6 @@ configure :build do
   activate :minify_html
   activate :minify_css
   activate :minify_javascript
-  activate :gzip
   activate :asset_hash, :ignore => [/\.(jpg|png)$/]
   activate :relative_assets
 end
-
-# Requires installing image_optim extensions.
-# Ref: https://github.com/toy/image_optim
-# 1) `brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush`
-# 2) Download pngout from http://www.jonof.id.au/kenutils
-# 3) `cp pngout /usr/local/bin/pngout`
-# Also, must be placed outside :build to ensure it occurs prior to other
-# extensions below that are also triggered after build.
-activate :imageoptim

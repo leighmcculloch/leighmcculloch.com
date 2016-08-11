@@ -3,21 +3,17 @@ export CLOUDFLARE_ZONE = c4d2f285d1dd72ac0083f9fe16dc0925
 run:
 	bundle exec middleman
 
+deploy: clean build push-gcs
+
 clean:
 	rm -fR build
 
 build:
 	bundle exec middleman build
 
-deploy: clean build
-	git branch -D gh-pages 2>/dev/null | true
-	git branch -D gh-pages-draft 2>/dev/null | true
-	git checkout -b gh-pages-draft && \
-		git add -f build && \
-		git commit -m "Deploy to gh-pages" && \
-		git subtree split --prefix build -b gh-pages && \
-		git push --force origin gh-pages:gh-pages && \
-		git checkout -
+push-gcs:
+	gsutil -m cp -a public-read -r build/* gs://leighmcculloch.com
+	gsutil web set -m index.html -e 404.html gs://leighmcculloch.com
 
 cdn:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \
