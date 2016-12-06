@@ -21,3 +21,7 @@ cdn:
 		-H "X-Auth-Key: $(CLOUDFLARE_CLIENT_API_KEY)" \
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
+
+setup:
+	gem install bundler
+	bundle install
