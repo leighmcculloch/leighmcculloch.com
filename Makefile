@@ -1,19 +1,13 @@
 export CLOUDFLARE_ZONE = c4d2f285d1dd72ac0083f9fe16dc0925
 
 run:
-	bundle exec middleman
+	while true ; do nc -l 4567 < source/index.txt ; done
 
-deploy: clean build push-gcs
-
-clean:
-	rm -fR build
-
-build:
-	bundle exec middleman build
+deploy: push-gcs cdn
 
 push-gcs:
-	gsutil -m cp -a public-read -r build/* gs://leighmcculloch.com
-	gsutil web set -m index.html -e 404.html gs://leighmcculloch.com
+	gsutil -m cp -a public-read -r source/* gs://leighmcculloch.com
+	gsutil web set -m index.txt -e 404.txt gs://leighmcculloch.com
 
 cdn:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \
@@ -21,7 +15,3 @@ cdn:
 		-H "X-Auth-Key: $(CLOUDFLARE_CLIENT_API_KEY)" \
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
-
-setup:
-	gem install bundler
-	bundle install
