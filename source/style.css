@@ -1,0 +1,33 @@
+body {
+  background: white;
+  color: rgba(0,0,0,0.8);
+  font-family: Lato, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 1em;
+}
+
+.about, .links, .keywords, .languages {
+  margin: 0.7em 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 0 0 0.2em 0;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+a {
+  color: hsl(215, 50%, 77%);
+  text-decoration: none;
+}
+
