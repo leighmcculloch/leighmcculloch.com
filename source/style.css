@@ -1,7 +1,7 @@
 body {
   background: white;
   color: rgba(0,0,0,0.8);
-  font-family: Lato, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.2em;
   line-height: 1.3em;
   font-weight: 300;
@@ -9,20 +9,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   margin: 1em;
+  text-align: center;
 }
 
 .about, .links, .keywords, .languages {
   margin: 0.7em 0;
 }
 
+.about .photo {
+  margin: 0 auto 1em auto;
+  width:200px;
+  height:200px;
+  border-radius: 100%;
+  background-image:url('images/c-circle-200.jpg');
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    background-image:url('images/c-circle-400.jpg');
+    background-size:200px 200px;
+  }
+}
+
 h1 {
   font-size: 1.5em;
-  font-weight: 900;
+  font-weight: 600;
   margin: 0 0 0.2em 0;
 }
 
 h2 {
   font-size: 1.1em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 0.8em;
   font-weight: 400;
 }
 
