@@ -3,10 +3,18 @@ export CLOUDFLARE_ZONE = c4d2f285d1dd72ac0083f9fe16dc0925
 run:
 	go run serve.go
 
-deploy: push-gcs cdn
+clean:
+	rm -fr build
+
+build:
+	mkdir -p build
+	cp -R source/* build/
+	go run markdown.go source/go-experience-reports/pointers.md build/go-experience-reports/pointers.html
+
+deploy: clean build push-gcs cdn
 
 push-gcs:
-	gsutil -m cp -a public-read -r source/* gs://leighmcculloch.com
+	gsutil -m cp -a public-read -r build/* gs://leighmcculloch.com
 	gsutil web set -m index.html -e 404.txt gs://leighmcculloch.com
 
 cdn:
@@ -15,3 +23,7 @@ cdn:
 		-H "X-Auth-Key: $(CLOUDFLARE_CLIENT_API_KEY)" \
 		-H "Content-Type: application/json" \
 		--data '{"purge_everything":true}'
+
+setup:
+	go get github.com/shurcooL/github_flavored_markdown
+
