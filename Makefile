@@ -25,5 +25,4 @@ cdn:
 		--data '{"purge_everything":true}'
 
 setup:
-	go get github.com/shurcooL/github_flavored_markdown
-
+	go get github.com/russross/blackfriday

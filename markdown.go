@@ -1,38 +1,79 @@
 package main
 
 import (
-	"fmt"
+	"bytes"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
+	"text/template"
 
-	"github.com/shurcooL/github_flavored_markdown"
-	"github.com/shurcooL/github_flavored_markdown/gfmstyle"
+	"github.com/russross/blackfriday"
 )
 
-var template = `<!DOCTYPE html>
+var html = `<!DOCTYPE html>
 <html>
 <head>
-<style>%s</style>
+<style>
+body {
+  background: white;
+  color: rgba(0,0,0,0.8);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 1em;
+}
+code {
+  display: inline-block;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+code:before, code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+pre code {
+  display: block;
+  padding: 0.5em;
+  overflow: auto;
+  font-size: 0.85em;
+  line-height: 1.45;
+}
+</style>
 </head>
-<body class="markdown-body" style="overflow:auto">%s
-
+<body>
+{{.Body}}
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
-	this.page.identifier = 'leighmcculloch.com-%s';
+	this.page.identifier = 'leighmcculloch.com-{{.DisqusID}}';
 };
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://leighmcculloch.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
+(function() {
+	var d = document, s = d.createElement('script');
+	s.src = 'https://leighmcculloch.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
 })();
 </script>
 
 </body>
 </html>`
+
+var tmpl = func() *template.Template {
+	t, err := template.New("").Parse(html)
+	if err != nil {
+		log.Fatalf("error loading template: %v", err)
+	}
+	return t
+}()
 
 func main() {
 	fileIn := os.Args[1]
@@ -46,25 +87,28 @@ func main() {
 		log.Fatalf("reading file %s: %v", fileIn, err)
 	}
 
-	html := github_flavored_markdown.Markdown(md)
+	html := blackfriday.MarkdownCommon(md)
 
 	err = os.MkdirAll(dirOut, os.ModePerm)
 	if err != nil {
 		log.Fatalf("making dir path %s: %v", dirOut, err)
 	}
 
-	cssFile, err := gfmstyle.Assets.Open("/gfm.css")
-	if err != nil {
-		log.Fatalf("getting gfmstyle css: %v", err)
-	}
-	css, err := ioutil.ReadAll(cssFile)
-	if err != nil {
-		log.Fatalf("reading gfmstyle css: %v", err)
+	data := struct {
+		Body     string
+		DisqusID string
+	}{
+		Body:     string(html),
+		DisqusID: fileIn,
 	}
 
-	fullHtml := fmt.Sprintf(template, css, html, fileIn)
+	out := bytes.Buffer{}
+	err = tmpl.ExecuteTemplate(&out, "", data)
+	if err != nil {
+		log.Fatalf("generating template: %v", err)
+	}
 
-	err = ioutil.WriteFile(fileOut, []byte(fullHtml), 0644)
+	err = ioutil.WriteFile(fileOut, []byte(out.Bytes()), 0644)
 	if err != nil {
 		log.Fatalf("writing file %s: %v", fileOut, err)
 	}
