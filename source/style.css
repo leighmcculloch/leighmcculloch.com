@@ -16,6 +16,9 @@ body {
   margin: 0.7em 0;
 }
 
+.links, .keywords, .languages {
+  font-size: 0.85em;
+}
 .about .photo {
   margin: 0 auto 1em auto;
   width:200px;
