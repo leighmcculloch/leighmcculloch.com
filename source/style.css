@@ -1,6 +1,6 @@
 body {
-  background: white;
-  color: rgba(0,0,0,0.8);
+  background: #1B1D1E;
+  color: #F8F8F2;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.2em;
   line-height: 1.3em;
@@ -19,14 +19,15 @@ body {
 .links, .keywords, .languages {
   font-size: 0.85em;
 }
+
 .about .photo {
   margin: 0 auto 1em auto;
   width:200px;
   height:200px;
   border-radius: 100%;
-  background-image:url('images/c-circle-200.jpg');
+  background-image:url('images/c-square-200.png');
   @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-    background-image:url('images/c-circle-400.jpg');
+    background-image:url('images/c-square-400.png');
     background-size:200px 200px;
   }
 }
@@ -35,11 +36,13 @@ h1 {
   font-size: 1.5em;
   font-weight: 600;
   margin: 0 0 0.2em 0;
+  color: #FD971F;
 }
 
 h2 {
   font-size: 1.1em;
   font-weight: 400;
+  color: #A6E22E;
 }
 
 h3 {
@@ -47,8 +50,20 @@ h3 {
   font-weight: 400;
 }
 
+h3 span {
+  color: #66D9EF
+}
+
+.keywords span {
+  color: #E6DB74;
+}
+
+.languages span {
+  color: #F92672;
+}
+
 a {
-  color: hsl(215, 50%, 77%);
+  color: #AE81FF;
   text-decoration: none;
 }
 
