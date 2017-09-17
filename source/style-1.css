@@ -1,0 +1,217 @@
+body {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  text-align: center;
+}
+
+.about, .links, .currently, .keywords, .languages {
+  margin: 0.7em 0;
+}
+
+.links, .currently, .keywords, .languages {
+  font-size: 0.85em;
+}
+
+.about .photo {
+  margin: 0 auto 1em auto;
+  width:200px;
+  height:200px;
+  border-radius: 100%;
+  background-image:url('images/c-square-200.png');
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    background-image:url('images/c-square-400.png');
+    background-size:200px 200px;
+  }
+}
+
+h1 {
+  font-size: 1.9em;
+  font-weight: 900;
+  margin-bottom: 0.4em;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0 0.25em;
+  color: #aaa;
+  font-size: 1.75em;
+  text-decoration: none;
+}
+.links a:hover { color:#777; }
+.links a:nth-child(1):hover { color:#36465d; }
+.links a:nth-child(2):hover { color:#2daae1; }
+.links a:nth-child(3):hover { color:#000; }
+.links a:nth-child(4):hover { color:#007bb6; }
+
+.timeline {
+  font-size:0.8em;
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    margin-bottom: 0
+}
+.timeline a {
+    color: inherit;
+    text-decoration: none
+}
+.timeline a:hover {
+    text-decoration: none
+}
+.timeline ul {
+    padding: 0 40px;
+    margin: 0 auto;
+    list-style: none;
+    overflow: hidden
+}
+.timeline ul:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 55px
+}
+.timeline ul li {
+    clear: both;
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 40px 0;
+    height: 30px
+}
+.timeline ul li:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0
+}
+.timeline ul li .what {
+    position: absolute;
+    top: -15px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    white-space: nowrap
+}
+.timeline ul li .what:before,
+.timeline ul li .what:after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    height: 0;
+    width: 0
+}
+.timeline ul li:nth-child(2n) .what {
+    right: 50%;
+    margin-right: 35px
+}
+.timeline ul li:nth-child(2n) .what:before,
+.timeline ul li:nth-child(2n) .what:after {
+    left: 100%
+}
+.timeline ul li:nth-child(2n+1) .what {
+    left: 50%;
+    margin-left: 35px
+}
+.timeline ul li:nth-child(2n+1) .what:before,
+.timeline ul li:nth-child(2n+1) .what:after {
+    right: 100%
+}
+.timeline ul li .year {
+    display: block
+}
+.timeline ul li:nth-child(2n) .year {
+    text-align: left;
+    margin-left: 50%;
+    padding-left: 30px
+}
+.timeline ul li:nth-child(2n+1) .year {
+    text-align: right;
+    margin-right: 50%;
+    padding-right: 30px
+}
+.timeline {
+    color: #999
+}
+.timeline {
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.1)
+}
+.timeline ul:before {
+    width: 2px;
+    margin-left: -1px;
+    background: #ddd
+}
+.timeline ul li:before {
+    margin-left: -6px;
+    margin-top: -6px;
+    padding: 6px;
+    background: #ddd;
+    border-radius: 10px
+}
+.timeline ul li .what {
+    background: white;
+    background-size: 100% 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border-color: white
+}
+.timeline ul li .what:before,
+.timeline ul li .what:after {
+    margin-bottom: -8px;
+    border-width: 8px;
+    border-color: transparent;
+    border-style: solid
+}
+.timeline ul li:nth-child(2n) .what:before,
+.timeline ul li:nth-child(2n) .what:after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: inherit
+}
+.timeline ul li:nth-child(2n) .what:before {
+    margin-left: 1px;
+    border-left-color: rgba(0, 0, 0, 0.1)
+}
+.timeline ul li:nth-child(2n+1) .what:before,
+.timeline ul li:nth-child(2n+1) .what:after {
+    border-top-color: transparent;
+    border-right-color: inherit;
+    border-bottom-color: transparent;
+    border-left-color: transparent
+}
+.timeline ul li:nth-child(2n+1) .what:before {
+    margin-right: 1px;
+    border-right-color: rgba(0, 0, 0, 0.1)
+}
+.timeline ul li .year {
+    line-height: 31px;
+    color: #aaa
+}
+.timeline ul li .what:hover {
+    background-color: #333333;
+    border-color: #333333;
+    color: #fff
+}
