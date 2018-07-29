@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="canonical" href="//leighmcculloch.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  {{ if .IsHome -}}
+  <title>{{ .Site.Title }}</title>
+  {{- else -}}
+  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  {{- end }}
+
+  <meta name="description" content="Software Engineer / Go / Ruby">
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="profile">
+  <meta property="og:title">
+  <meta property="og:description">
+  <meta property="og:url" content="https://leighmcculloch.com">
+  <meta property="og:image" content="https://leighmcculloch.com/images/c-square-400.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@___leigh___">
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/index.css">
+  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/layout.css">
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <!-- Icons -->
+  <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+
+  <!-- RSS -->
+  <link type="application/rss+xml" rel="alternate" href="{{ .RSSLink }}" title="{{ .Site.Title }}" />
+</head>
+  <body class="{{ .Site.Params.themeColor }}">
+    <div class="content container">
+    {{ if .IsHome -}}
+    {{- else -}}
+    <div class="menu">
+      <ul>
+        <li><a href="{{ .Site.BaseURL }}">Leigh McCulloch</a></li>
+        <li><a href="{{ .Site.BaseURL }}posts">Posts</a></li>
+        <li><a href="https://github.com/leighmcculloch/talks">Talks</a></li>
+      </ul>
+    </div>
+    {{- end }}
+
+    {{ block "main" . -}}{{- end }}
+    </div>
+
+    {{ template "_internal/google_analytics_async.html" . }}
+  </body>
+</html>

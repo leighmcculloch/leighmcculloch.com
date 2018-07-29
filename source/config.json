@@ -1,0 +1,18 @@
+{
+  "baseURL": "https://leighmcculloch.com/",
+  "title": "Leigh McCulloch · Software Engineer",
+  "languageCode": "en-us",
+  "pygmentsStyle": "monokailight",
+  "disqusShortname": "leighmcculloch",
+  "googleAnalytics": "UA-1756782-50",
+  "permalinks": {
+    "posts": "/posts/:slug"
+  },
+  "privacy": {
+    "googleAnalytics": {
+      "anonymizeIP": true,
+      "respectDoNotTrack": true,
+      "useSessionStorage": true
+    }
+  }
+}

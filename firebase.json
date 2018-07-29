@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "source/public",
+    "ignore": [
+      "**/.*"
+    ],
+    "redirects": [
+      {
+        "source" : "/go-experience-reports/pointers.html",
+        "destination" : "/posts/go-experience-report-pointers",
+        "type" : 301
+      }
+    ]
+  }
+}

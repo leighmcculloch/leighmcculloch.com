@@ -1,21 +1,21 @@
+dev:
+	cd source && hugo server --baseURL=https://$(NGROK).ngrok.io --appendPort=false
+
+ngrok:
+	ngrok http 1313
+
 export CLOUDFLARE_ZONE = c4d2f285d1dd72ac0083f9fe16dc0925
 
-run:
-	go run serve.go
-
 clean:
-	rm -fr build
+	rm -fr source/public
 
 build:
-	mkdir -p build
-	cp -R source/* build/
-	go run markdown.go source/go-experience-reports/pointers.md build/go-experience-reports/pointers.html
+	cd source && hugo
 
-deploy: clean build push-gcs cdn
+deploy: clean build push
 
-push-gcs:
-	gsutil -m cp -a public-read -r build/* gs://leighmcculloch.com
-	gsutil web set -m index.html -e 404.txt gs://leighmcculloch.com
+push:
+	firebase deploy
 
 cdn:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$(CLOUDFLARE_ZONE)/purge_cache" \
@@ -25,4 +25,6 @@ cdn:
 		--data '{"purge_everything":true}'
 
 setup:
-	go get github.com/russross/blackfriday
+	curl -o /tmp/hugo.deb -sSL https://github.com/gohugoio/hugo/releases/download/v0.45.1/hugo_0.45.1_Linux-64bit.deb
+	apt install -f /tmp/hugo.deb
+	rm /tmp/hugo.deb
