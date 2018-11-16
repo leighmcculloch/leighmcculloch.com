@@ -15,6 +15,7 @@ build:
 deploy: clean build push
 
 push:
+	firebase login --no-localhost
 	firebase deploy
 
 cdn:
