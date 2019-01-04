@@ -1,2 +1,4 @@
 build
 .firebase/
+.bin/
+package.json
