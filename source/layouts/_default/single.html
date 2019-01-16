@@ -3,7 +3,18 @@
   <h1>{{ .Title }}</h1>
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
   {{ .Content }}
-  <span class="post-author">Author: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a></span>
+  <span class="post-author">
+    {{$authors := $.Param "author"}}
+    {{with $authors}}
+      {{if gt (len $authors) 1}}Authors:{{else}}Author:{{end}}
+      {{range $index, $author := $authors}}
+        {{if $index}}and{{end}}
+        <a href="{{with (index $.Site.Data.authors $author "url")}}{{.}}{{else}}{{$.Site.BaseURL}}{{end}}">{{index $.Site.Data.authors $author "name"}}</a>
+      {{end}}
+    {{else}}
+      Author: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a>
+    {{end}}
+  </span>
 </div>
 
 {{ if .Site.DisqusShortname -}}
