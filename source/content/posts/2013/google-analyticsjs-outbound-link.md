@@ -1,6 +1,6 @@
 +++
 slug = "google-analyticsjs-outbound-link"
-title = "Google Analytics.js Outbound Link Tracking"
+title = "Google analytics.js outbound link tracking"
 date = 2013-11-22
 disqus_identifier = "vabzuqw"
 +++

@@ -1,6 +1,6 @@
 +++
 slug = "continuous-deployment-to-app-engine-using-google-cloud-build"
-title = "Continuous Deployment to App Engine using Google Cloud Build"
+title = "Continuous deployment to App Engine using Google Cloud Build"
 date = 2019-01-03
 disqus_identifier = "wblpcnl"
 +++

@@ -1,6 +1,6 @@
 +++
 slug = "getting-hex-string-for-nsdata"
-title = "Obj-C: Getting a Hex String for an NSData"
+title = "Obj-C: Getting a hex string for an NSData"
 date = 2013-11-30
 disqus_identifier = "ofvtepu"
 +++

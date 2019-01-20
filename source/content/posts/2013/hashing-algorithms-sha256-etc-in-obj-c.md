@@ -1,6 +1,6 @@
 +++
 slug = "hashing-algorithms-sha256-etc-in-obj-c"
-title = "Obj-C: Hashing Algorithms (SHA256, etc)"
+title = "Obj-C: Hashing algorithms (SHA256, etc)"
 date = 2013-12-01
 disqus_identifier = "mhactvd"
 +++

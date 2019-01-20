@@ -1,6 +1,6 @@
 +++
 slug = "iphone-dev-detect-if-iphone-in-silent"
-title = "iOS Dev: Detect if the iPhone's in Silent Mode"
+title = "iOS Dev: Detect if the iPhone's in silent mode"
 date = 2009-07-20
 disqus_identifier = "qpwxrcf"
 +++

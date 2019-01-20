@@ -1,6 +1,6 @@
 +++
 slug = "iphone-os-301-update-development"
-title = "iOS Dev: iOS 3.0.1 Update Development"
+title = "iOS Dev: iOS 3.0.1 update development"
 date = 2009-08-03
 disqus_identifier = "vxkjqme"
 +++
