@@ -9,16 +9,16 @@ canonical_url = "https://medium.com/braintree-product-technology/continuous-depl
 
 _This post was co-authored with [Paul Gross](https://www.pgrs.net) and originally published to the Medium publication [Braintree Product and Technology](https://medium.com/braintree-product-technology) as [Continuous Deployment Isn't Just for Applications](https://medium.com/braintree-product-technology/continuous-deployment-isnt-just-for-applications-ed78b4f4a7f6)._
 
-At [Braintree](https://www.braintreepayments.com), while we’ve been pushing more of our production services towards continuous deployment for faster and safer releases, we’ve discovered we can build the ideas of continuous deployment into our culture and all areas of our stack.
+At [Braintree](https://www.braintreepayments.com), while we’ve been pushing more of our production services towards [continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment) for faster and safer releases, we’ve discovered we can build the ideas of continuous deployment into our culture and all areas of our stack.
 
 We now continuously deploy important internal libraries written in both Ruby and Java, and plan to ramp up this effort to include internal tools as well. The process our engineers go through when contributing to shared libraries looks like this:
 
 - Developers check out the shared library and make their changes
 - Developers open a pull request
-- Continuous integration tests, builds, and publishes a test version of the library
+- [Jenkins](https://jenkins.io/) tests, builds, and publishes a test version of the library
 - Pull request is reviewed and iterated upon
 - While iterating, developers can upgrade to the test version in one or more applications using the shared library
-- Once the pull request is merged, continuous integration publishes a new version of the library
+- Once the pull request is merged, Jenkins publishes a new version of the library
 - Developers can then upgrade the library in the applications
 
 We’ve found that continuously deploying our libraries has eliminated repetitive tasks and helped us move quickly with shared code initiatives where a monolithic repository was not an option. New engineers can now easily integrate and contribute to libraries by reading simple scripts rather than long documentation describing our release processes. Deploying test versions from open pull requests has given engineers the ability to iterate on functionality spanning applications and shared libraries without needing to merge to master early.
