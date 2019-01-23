@@ -84,4 +84,4 @@ And in a Maven `pom.xml`:
 # Next steps
 We’re converting more of our libraries and internal tools to this approach. Let us know how you’re building continuous deployment into your culture!
 
-_This post was co-authored with [Paul Gross](https://www.pgrs.net) and originally published to the Medium publication [Braintree Product and Technology](https://medium.com/braintree-product-technology) as [Continuous Deployment Isn't Just for Applications](https://medium.com/braintree-product-technology/continuous-deployment-isnt-just-for-applications-ed78b4f4a7f6). Copyright &copy; 2019 PayPal._
+_Copyright &copy; 2019 PayPal._
