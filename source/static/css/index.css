@@ -2,9 +2,9 @@
   width:200px;
   height:200px;
   border-radius: 1em;
-  background-image:url('../images/d-square-200.png');
+  background-image:url('../images/c-square-200.png');
   @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-    background-image:url('../images/d-square-400.png');
+    background-image:url('../images/c-square-400.png');
     background-size:200px 200px;
   }
 }
