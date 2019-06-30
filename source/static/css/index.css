@@ -36,10 +36,10 @@
   width: 1em;
   height: 1em;
 }
-.index .links a:hover svg { fill:#777; }
-.index .links a:nth-child(1):hover svg { fill:#36465d; }
-.index .links a:nth-child(2):hover svg { fill:#ff0000; }
-.index .links a:nth-child(3):hover svg { fill:#2daae1; }
-.index .links a:nth-child(4):hover svg { fill:#000; }
-.index .links a:nth-child(5):hover svg { fill:#007bb6; }
-.index .links a:nth-child(6):hover svg { fill:#fd6f31; }
+.index .links span a:hover svg { fill:#777; }
+.index .links span:nth-child(1) a:hover svg { fill:#36465d; }
+.index .links span:nth-child(2) a:hover svg { fill:#ff0000; }
+.index .links span:nth-child(3) a:hover svg { fill:#2daae1; }
+.index .links span:nth-child(4) a:hover svg { fill:#000; }
+.index .links span:nth-child(5) a:hover svg { fill:#007bb6; }
+.index .links span:nth-child(6) a:hover svg { fill:#fd6f31; }
