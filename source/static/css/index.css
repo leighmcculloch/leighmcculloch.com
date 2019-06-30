@@ -25,21 +25,33 @@
   margin: 10px 0;
 }
 
-.index .links a {
-  display: inline-block;
+.index .links div {
   margin: 0 0.25em 0 0;
-  font-size: 1.75em;
-  text-decoration: none;
+  display: inline-block;
 }
-.index .links a svg {
+.index .links div a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1em;
+}
+.index .links div a span {
+  display: inline-block;
+}
+.index .links div a span.svg svg {
+  vertical-align: middle;
   fill: #aaa;
   width: 1em;
   height: 1em;
+  font-size: 1.5em;
 }
-.index .links span a:hover svg { fill:#777; }
-.index .links span:nth-child(1) a:hover svg { fill:#36465d; }
-.index .links span:nth-child(2) a:hover svg { fill:#ff0000; }
-.index .links span:nth-child(3) a:hover svg { fill:#2daae1; }
-.index .links span:nth-child(4) a:hover svg { fill:#000; }
-.index .links span:nth-child(5) a:hover svg { fill:#007bb6; }
-.index .links span:nth-child(6) a:hover svg { fill:#fd6f31; }
+.index .links div a span.text {
+  vertical-align: middle;
+}
+.index .links div a:hover svg { fill:#777; }
+.index .links div:nth-child(1) a:hover svg { fill:#36465d; }
+.index .links div:nth-child(2) a:hover svg { fill:#ff0000; }
+.index .links div:nth-child(3) a:hover svg { fill:#2daae1; }
+.index .links div:nth-child(4) a:hover svg { fill:#000; }
+.index .links div:nth-child(5) a:hover svg { fill:#007bb6; }
+.index .links div:nth-child(6) a:hover svg { fill:#fd6f31; }
+.index .links div:nth-child(7) a:hover svg { fill:#000; }
