@@ -407,3 +407,23 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+/* Icons */
+a.twitter:hover {
+  text-decoration: none;
+}
+a.twitter span.svg svg {
+  vertical-align: middle;
+  fill: #aaa;
+  width: 1em;
+  height: 1em;
+  font-size: 1.5em;
+}
+a.twitter span.label {
+  font-size: 0.95em;
+  vertical-align: middle;
+}
+a.twitter:hover span.label {
+  text-decoration: underline;
+}
+a.twitter:hover span.svg svg { fill:#2daae1; }

@@ -17,8 +17,9 @@
   </span>
 </div>
 
-{{ if .Site.DisqusShortname -}}
 <h2>Comments</h2>
-{{ template "_internal/disqus.html" . }}
-{{- end }}
+<a href="https://twitter.com/intent/tweet?via=___leigh___&url={{ .Permalink }}" class="twitter">
+  <span class="svg">{{safeHTML (readFile "static/images/font-awesome-svgs/twitter.svg")}}</span>
+  <span class="label">Start a conversation on Twitter</span>
+</a>
 {{- end }}
