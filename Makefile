@@ -1,8 +1,5 @@
 dev:
-	hugo -s source server --baseURL=https://$(NGROK).ngrok.io --appendPort=false
-
-ngrok:
-	ngrok http 1313
+	hugo -s source server --bind 0.0.0.0 --port 8000
 
 deploy: build push
 
