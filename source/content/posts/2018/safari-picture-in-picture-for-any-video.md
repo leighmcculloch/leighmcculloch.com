@@ -10,5 +10,5 @@ Safar’s [picture-in-picture](https://support.apple.com/en-us/HT206997) feature
 Good news! You can create a bookmark to run a small amount of JavaScript to trigger picture-in-picture on any website. Create a bookmark with the following address then when you’re on the page with the video click the bookmark.
 
 {{< highlight javascript >}}
-javascript:document.getElementsByTagName("video")[0].webkitSetPresentationMode("picture-in-picture");
+javascript:Array.prototype.slice.call(document.getElementsByTagName("video")).forEach(function(e) { e.webkitSetPresentationMode("picture-in-picture"); });
 {{</ highlight >}}
