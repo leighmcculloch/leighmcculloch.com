@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://w3id.org/security/v1"
+  ],
+  "id": "https://leighmcculloch/activitypub/me",
+  "type": "Person",
+  "inbox": "https://leighmcculloch/activitypub/me/inbox",
+  "outbox": "https://leighmcculloch/activitypub/me/outbox",
+  "preferredUsername": "leighmcculloch",
+  "name": "Leigh McCulloch",
+  "url": "https://leighmcculloch.com",
+  "publicKey": {
+    "id": "https://leighmcculloch/activitypub/me#main-key",
+    "owner": "https://leighmcculloch/activitypub/me",
+    "publicKeyPem": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nComment: https://keybase.io/download\nVersion: Keybase Go 4.1.0 (darwin)\n\n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\n=XEPA\n-----END PGP PUBLIC KEY BLOCK-----\n"
+  },
+  "icon": {
+    "type": "Image",
+    "mediaType": "image/png",
+    "url": "https://leighmcculloch.com/images/c-square-400.png"
+  }
+}
