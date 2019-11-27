@@ -19,6 +19,7 @@ If you'd like to see it in action check these links out:
 - https://github.com/leighmcculloch/gas/commit/8a3f120/checks?check_suite_id=328892361
 - https://github.com/leighmcculloch/gas/blob/8a3f120/.github/workflows/release.yml#L14-L16
 - https://github.com/leighmcculloch/gas/blob/8a3f120/Makefile#L4-L5
+- https://github.com/leighmcculloch/gas/blob/8a3f120/.goreleaser.yml#L20-L31
 - https://github.com/leighmcculloch/gas/blob/8a3f120/Formula/gas.rb
 
 A user can install `gas` by typing `brew install 4d63/gas/gas` and it uses the formula above that is written by GitHub Actions without any secrets defined beyond the default `GITHUB_TOKEN` that GitHub provides.
