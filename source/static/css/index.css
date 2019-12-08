@@ -57,8 +57,7 @@
   font-size: 0.8em;
 }
 .index .links.money div a:hover span.label {
-  display: inline;
-  width: none;
+  width: auto;
 }
 .index .links div a:hover svg { fill:#777; }
 .index .links.site div:nth-child(1) a:hover svg { fill:#36465d; }
