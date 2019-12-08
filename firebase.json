@@ -4,6 +4,26 @@
     "ignore": [
       "**/.*"
     ],
+    "headers": [
+      {
+        "source": ".well-known/stellar.toml",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "stellar/federation.json",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ],
     "redirects": [
       {
         "source" : "/go-experience-reports/pointers.html",
