@@ -47,6 +47,9 @@
   font-size: 0.8em;
   vertical-align: middle;
 }
+.index .links.social div a span.label {
+  display: none;
+}
 .index .links.money div a span.label {
   display: inline-block;
   width: 6rem;
