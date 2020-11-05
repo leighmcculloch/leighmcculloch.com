@@ -51,6 +51,6 @@ These notifications are enabled in [GitHub's Notification settings](https://gith
 
 ![](screenshot-enable-your-activity.png)
 
-With all the above filters enabled you should see something like this:
+With all the above filters enabled our filter settings in Gmail should look like this:
 
 ![](screenshot-filters.png)
