@@ -4,9 +4,9 @@ title = "Filtering GitHub Notifications in Gmail"
 date = 2020-11-04
 +++
 
-GitHub sends notifications about _everything_. This is great, but also noisy. The good news is we can wrangle it with a few filters. The filters below are geared for Gmail and for making use of Gmail's Important feature where important mail is flagged and can be grouped separately when Gmail is configured with the `Priority Inbox` inbox type.
+GitHub sends notifications about _everything_. This is great, but also noisy. The good news is we can wrangle it with a few filters. The filters below are geared for Gmail and make use of Gmail's Important feature, where important mail is flagged and grouped separately when Gmail is configured with the `Priority Inbox` inbox type.
 
-Using these filters we will see notifications that are important to us, such as review requests, mentions, and comments on issues we are involved in, flagged as important. Notifications that are the result of us being subscribed to a repository will still end up in the inbox but not marked important, and notifications like commits on pull requests will skip the inbox entirely but won't be marked as read so that the next time someone comments on that pull request we'll see all the pushes unfurled in the thread.
+Notifications that are important to us, such as review requests, mentions, and comments on issues we are involved in, will be flagged as important. Notifications that are the result of us being subscribed to a repository will still end up in the inbox but not marked important. Notifications like commits on pull requests will skip the inbox entirely but won't be marked as read so that the next time a comment is posted to that pull request we'll see all the pushes unfurled in the thread.
 
 The filters use a set of `CC` email addresses that GitHub defines [here](https://docs.github.com/en/free-pro-team@latest/github/managing-subscriptions-and-notifications-on-github/configuring-notifications#filtering-email-notifications).
 
@@ -40,7 +40,7 @@ Matches: cc:push@noreply.github.com
 Do this: Skip Inbox
 ```
 
-GitHub also has an optional feature that makes this even better. We can configure GitHub to send notification emails for our own activity. If you we enable this feature we get a complete history of issues and pull requests in our email client. When enabled we use the following filter to mark our activity notifications as read and archived so that we don't see them in our inbox and only when viewing threads. We also mark the notification as important so that the thread as a whole is marked as important.
+GitHub also has an optional feature that makes this even better. We can configure GitHub to send notification emails for our own activity. If we enable this feature we get a complete history of issues and pull requests in our email client. The following filter marks our activity notifications as read and archived so that we don't see them in our inbox and only when viewing threads. It also marks the notification as important so that the thread as a whole is marked as important.
 
 ```
 Matches: cc:your_activity@noreply.github.com
