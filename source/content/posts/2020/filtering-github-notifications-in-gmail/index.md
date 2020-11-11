@@ -37,7 +37,7 @@ Do this: Never mark it as important
 
 ```
 Matches: cc:push@noreply.github.com
-Do this: Skip Inbox
+Do this: Skip Inbox, Never mark it as important
 ```
 
 GitHub also has an optional feature that makes this even better. We can configure GitHub to send notification emails for our own activity. If we enable this feature we get a complete history of issues and pull requests in our email client. The following filter marks our activity notifications as read and archived so that we don't see them in our inbox and only when viewing threads. It also marks the notification as important so that the thread as a whole is marked as important.
