@@ -1,6 +1,6 @@
 +++
 slug = "docker-context-via-ssh-with-macos"
-title = "Docker Context via SSH with macOS"
+title = "Docker: Context via SSH with macOS"
 date = 2020-11-28
 +++
 
