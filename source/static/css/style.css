@@ -103,13 +103,25 @@ dd {
 
 .menu ul li {
   display: inline-block;
-  padding: 0 1em 0 0;
+  padding: 0 0.7em 0 0;
 }
 
-.menu ul li:nth-child(1) a {
+.menu ul li:nth-child(2) a {
   font-weight: bold;
 }
 
+.menu ul li a .photo {
+  display:inline-block;
+  width:40px;
+  height:40px;
+  background-size:40px;
+  vertical-align:middle;
+  border-radius:0.1em;
+  background-image:url('../images/c-square-200.png');
+  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    background-image:url('../images/c-square-400.png');
+  }
+}
 
 /* Misc */
 hr {
