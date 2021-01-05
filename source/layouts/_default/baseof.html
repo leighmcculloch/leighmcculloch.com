@@ -8,9 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   {{ if .IsHome -}}
-  <title>{{ .Site.Title }}</title>
+  <title>Leigh McCulloch &middot; Software Engineer</title>
+  {{- else if .IsPage -}}
+  <title>{{ .Title }}</title>
   {{- else -}}
-  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>Leigh McCulloch &middot; {{ .Title }}</title>
   {{- end }}
 
   <meta name="description" content="Software Engineer / Go / Ruby">
