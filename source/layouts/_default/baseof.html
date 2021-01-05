@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
 
-  <link rel="canonical" href="{{with .Param "canonical_url"}}{{.}}{{else}}{{.Permalink}}{{end}}">
+  <link rel="canonical" href="{{with .Param " canonical_url"}}{{.}}{{else}}{{.Permalink}}{{end}}">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -21,7 +22,7 @@
   <meta property="og:title">
   <meta property="og:description">
   <meta property="og:url" content="https://leighmcculloch.com">
-  <meta property="og:image" content="https://leighmcculloch.com/images/c-square-400.png">
+  <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@___leigh___">
 
@@ -37,13 +38,16 @@
   <!-- RSS -->
   <link type="application/rss+xml" rel="alternate" href="{{ .RSSLink }}" title="{{ .Site.Title }}" />
 </head>
-  <body class="{{ .Site.Params.themeColor }}">
-    <div class="content container">
+
+<body class="{{ .Site.Params.themeColor }}">
+  <div class="content container">
     {{ if .IsHome -}}
     {{- else -}}
     <div class="menu">
       <ul>
-        <li><a href="{{ .Site.BaseURL }}"><div class="photo"></div></a></li>
+        <li><a href="{{ .Site.BaseURL }}">
+            <div class="photo"></div>
+          </a></li>
         <li><a href="{{ .Site.BaseURL }}">Leigh McCulloch</a></li>
         <li><a href="{{ .Site.BaseURL }}posts">Posts</a></li>
       </ul>
@@ -51,8 +55,9 @@
     {{- end }}
 
     {{ block "main" . -}}{{- end }}
-    </div>
+  </div>
 
-    {{ template "_internal/google_analytics_async.html" . }}
-  </body>
+  {{ template "_internal/google_analytics_async.html" . }}
+</body>
+
 </html>
