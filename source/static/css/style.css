@@ -118,7 +118,9 @@ dd {
   vertical-align:middle;
   border-radius:0.1em;
   background-image:url('../images/c-bg-white-square-200.png');
-  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+}
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .menu ul li a .photo {
     background-image:url('../images/c-bg-white-square-400.png');
   }
 }

@@ -3,7 +3,9 @@
   height:200px;
   border-radius: 1em;
   background-image:url('../images/c-bg-whiteshadow-square-200.png');
-  @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+}
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .index .photo {
     background-image:url('../images/c-bg-whiteshadow-square-400.png');
     background-size:200px 200px;
   }
