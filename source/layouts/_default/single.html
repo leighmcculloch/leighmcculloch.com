@@ -2,17 +2,38 @@
 <div class="post">
   <h1>{{ .Title }}</h1>
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-  {{ .Content }}
-  <span class="post-author">
-    {{$authors := $.Param "author"}}
-    {{with $authors}}
-      {{if gt (len $authors) 1}}Authors:{{else}}Author:{{end}}
-      {{range $index, $author := $authors}}
-        {{if $index}}and{{end}}
-        <a href="{{with (index $.Site.Data.authors $author "url")}}{{.}}{{else}}{{$.Site.BaseURL}}{{end}}">{{index $.Site.Data.authors $author "name"}}</a>
+  <span class="post-content">
+    {{ .Content }}
+  </span>
+  <span class="post-meta">
+    {{if eq .Section "posts"}}
+    <span class="post-author">
+      {{$authors := $.Param "author"}}
+      {{with $authors}}
+        {{if gt (len $authors) 1}}Authors:{{else}}Author:{{end}}
+        {{range $index, $author := $authors}}
+          {{if $index}}and{{end}}
+          <a href="{{with (index $.Site.Data.authors $author "url")}}{{.}}{{else}}{{$.Site.BaseURL}}{{end}}">{{index $.Site.Data.authors $author "name"}}</a>
+        {{end}}
+      {{else}}
+        Author: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a>
       {{end}}
-    {{else}}
-      Author: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a>
+    </span>
+    {{end}}
+    {{if eq .Section "talks"}}
+    <span class="talk-event">
+      Event: {{$.Param "talk_event"}}
+    </span>
+    {{with $slides := $.Param "talk_slides"}}
+    <span class="talk-slides">
+      Slides: <a href="{{$slides}}" target="_blank" rel="noopener noreferrer">Slides</a>
+    </span>
+    {{end}}
+    {{with $slidesNotes := $.Param "talk_slides_notes"}}
+    <span class="talk-slides">
+      Notes: <a href="{{$slidesNotes}}" target="_blank" rel="noopener noreferrer">Slides with Notes</a>
+    </span>
+    {{end}}
     {{end}}
   </span>
 </div>

@@ -41,7 +41,7 @@
 
 <body class="{{ .Site.Params.themeColor }}">
   <div class="content container">
-    {{ if .IsHome -}}
+    {{ if eq .Kind "home" -}}
     {{- else -}}
     <div class="menu">
       <ul>
@@ -49,7 +49,7 @@
             <div class="photo"></div>
           </a></li>
         <li><a href="{{ .Site.BaseURL }}">Leigh McCulloch</a></li>
-        <li><a href="{{ .Site.BaseURL }}posts">Posts</a></li>
+        <li><a href="{{ .Site.BaseURL }}{{ .Section }}">{{ title .Section }}</a></li>
       </ul>
     </div>
     {{- end }}

@@ -1,0 +1,192 @@
+Working with strings
+27 Oct 2017
+
+Leigh McCulloch
+Software Engineer
+@___leigh___
+
+* Lets reverse a string
+
+: A few days ago I was fiddling with strings and learnt a couple things, or actually, really just one thing, that strings and text are complicated.
+
+How hard could it be?
+
+.image https://media.giphy.com/media/3o6MbprQlc6He54Yso/giphy.gif
+
+* Lets reverse cafes
+
+Input
+
+  cafes
+
+Expected output
+
+  sefac
+
+* Easy
+
+.play 1-ascii.go /^func/,/\z/
+
+* Wait a sec, that's not how to spell cafés
+
+Input
+
+  cafés
+
+Expected output
+
+  séfac
+
+* Should be easy
+
+.play 2-multibyte-1-attempt-1.go /^func/,/\z/
+
+* Hmm
+
+.image https://media.giphy.com/media/cFgb5p5e1My3K/giphy.gif
+
+Why didn't it work?
+
+.play 2-multibyte-2-hex.go /^func main/,/^}/
+
+* Not too hard
+
+A single character can be multiple bytes. Unicode calls this a code point.
+
+We can decode each character using a unicode decoder and preserve the internal order of the bytes within each character.
+
+.play 2-multibyte-3-attempt-2.go /^func/,/\z/
+
+* Good news everyone
+
+.image https://uploads.disquscdn.com/images/1f2364b96dc4c10ea5dce7d52d15fa747296e31c9eb9049297eb3a448249a695.gif 200 _
+
+Many standard libraries take care of this for us.
+
+Example (ruby)
+
+  "cafés".reverse # séfac
+
+Example (java)
+
+  new StringBuffer("cafés").reverse().toString() // séfac
+
+* We did it
+
+.image https://media.giphy.com/media/WibIdDMndJYoU/giphy.gif
+
+* Nope
+
+.image https://media.giphy.com/media/wofftnAdDtx4s/giphy.gif
+
+* Lets try more inputs
+
+Input
+
+  cafés
+
+Expected output
+
+  séfac
+
+It looks the same...
+
+* Lets try it
+
+.play 3-combining-1-attempt-1.go /^func/,/\z/
+
+* What's going on
+
+  é != é
+
+.play 3-combining-2-hex.go /^func main/,/^}/
+
+Standard libraries of most langauges start to be less useful here too.
+
+Example (ruby)
+
+  "cafés".reverse # śefac
+
+Example (java)
+
+  new StringBuffer("cafés").reverse().toString() // śefac
+
+* We got this
+
+We just need to identify marks and preserve their ordering
+
+.play 3-combining-3-attempt-2.go /START/,/\z/
+
+* Success!
+
+.image https://media.giphy.com/media/msKNSs8rmJ5m/giphy.gif
+
+* Maybe we should test some more...
+
+Input
+
+  cafés 👍🏽
+
+Expected output
+
+  👍🏽 séfac
+
+It'll work for sure
+
+.play 4-modifiers-1-attempt-1.go /^func main/,/^}/
+
+* Being practical
+
+Reversing strings is a pretty rare thing to do in a real world product.
+
+But strings can still bite you.
+
+* Be wary of string length
+
+Every language make different types of lengths more accessible.
+
+Example (go)
+
+  utf8.RuneCountInString("cafés") = 5     len("cafés")              = 6
+  utf8.RuneCountInString("cafés") = 6     len("cafés")              = 7
+
+Example (ruby)
+
+  "cafés".length                  = 5      "cafés".bytesize         = 6
+  "cafés".length                  = 6      "cafés".bytesize         = 7
+
+Example (java)
+
+  "cafés".length()                = 5     "cafés".getBytes().length = 6
+  "cafés".length()                = 6     "cafés".getBytes().length = 7
+
+* Be wary of string length
+
+When getting the length of a string, always consider what you really need.
+
+- Number of bytes
+
+  Go:   len(s)
+  Ruby: s.bytesize
+  Java: s.getBytes().length
+
+- Number of Unicode code points
+
+  Go:   utf8.RuneCountInString(s)
+  Ruby: s.length
+  Java: s.length()
+
+- Number of visual characters that will be displayed
+
+  ¯\_(ツ)_/¯
+
+* Links
+
+The implementations of string reversal in Go are from:
+
+.link https://4d63.com/strrev
+
+Further reading:
+
+.link https://blog.golang.org/strings#TOC_5.
+.link https://unicode.org

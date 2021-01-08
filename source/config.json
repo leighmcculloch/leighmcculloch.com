@@ -2,12 +2,16 @@
   "baseURL": "https://leighmcculloch.com/",
   "title": "Leigh McCulloch · Software Engineer",
   "languageCode": "en-us",
-  "disableKinds": ["taxonomy", "taxonomyTerm"],
+  "disableKinds": [
+    "taxonomy",
+    "taxonomyTerm"
+  ],
   "pygmentsStyle": "monokailight",
   "disqusShortname": "leighmcculloch",
   "googleAnalytics": "UA-1756782-50",
   "permalinks": {
-    "posts": "/posts/:slug"
+    "posts": "/posts/:slug",
+    "talks": "/talks/:slug"
   },
   "privacy": {
     "googleAnalytics": {
