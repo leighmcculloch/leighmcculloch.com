@@ -183,7 +183,7 @@ golistcmp
 ## `golistcmp`
 
 <!--
-And that's it, there are three commands you can use to understand what dependencies you have and why you have them.
+And that's it, there are four commands you can use to understand what dependencies you have and why you have them.
 -->
 
 ---
