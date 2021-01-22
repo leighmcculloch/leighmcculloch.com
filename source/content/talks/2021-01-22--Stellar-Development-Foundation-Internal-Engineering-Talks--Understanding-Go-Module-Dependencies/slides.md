@@ -4,14 +4,12 @@ theme: gaia
 class: lead invert
 ---
 
-# ~~One~~<br/>Three<br/>weird tricks<br/>to understanding<br/>Go module dependencies
+# Tools for Understanding<br/>Go Module Dependencies
 
 <!--
-My talk today is three weird tricks to understanding Go module dependencies.
+My talk today is about tools for understanding Go module dependencies.
 
-I'm going to start with a super brief recap on what Go modules are, then we'll dive into the weird tricks.
-
-This will be pretty short.
+I'm going to start with a super brief recap on what Go modules are, then we'll dive into the tools.
 
 TRANSITION: What are Go modules...
 -->
@@ -49,16 +47,16 @@ Here is one of our go.mod files...
 <!--
 This is for the most part all you need to know for 99% general day-to-day development in Go. Everything is sweet... Everything appears to work the way we'd expect it to...
 
-TRANSITION: Eventually you'll come across some gotchas...
+TRANSITION: Eventually we'll come across some gotchas...
 -->
 
 ---
 
 # Gotcha 1
-## go.mod lies about version
+## go.mod versions aren't the compiled versions
 
 <!--
-Go.mod lies about the versions we're using, or at least it appears like it's lying.
+Go.mod versions aren't the compiled versions.
 
 The version listed in the go.mod for a dependency might not be the version that'll be used at compile time.
 
@@ -77,7 +75,7 @@ Go.mod does not tell us about all our dependencies.
 
 Go.mod is only intended to capture direct dependencies and not the dependencies of your dependencies.
 
-In some edge cases indirect dependencies will show up in the file, but that only happens if a dependency doesn't have its own go.mod file.
+In some edge cases indirect dependencies will show up in the file, but that only happens if a dependency doesn't have its own go.mod file. The first time we see the `// indirect` we might think the go.mod is capturing all our dependencies dependencies, but that's not the case.
 
 So a go.mod file is not a snapshot of all the dependencies of your application.
 -->
@@ -92,7 +90,7 @@ Go.mod tells us nothing about indirect dependencies.
 
 The go.mod file won't tell you what most of your indirect dependencies are, but even if it does for some, it won't tell you what direct dependency is importing them.
 
-All your know is one of your dependencies is importing it, but not which one.
+All we know is one of your dependencies is importing it, but not which one.
 
 So a go.mod file doesn't tell us why we have dependencies.
 -->
@@ -102,7 +100,7 @@ So a go.mod file doesn't tell us why we have dependencies.
 
 ---
 
-# Trick 1
+# Tool 1
 ## `go list -m all`
 
 <!--
@@ -124,13 +122,13 @@ The output of this command can be really useful to track over time. So you'll se
 
 ---
 
-# Trick 2
+# Tool 2
 ## `go mod graph`
 
 <!--
 The next command is `go mod graph`.
 
-This command is a lot less powerful. It really does one thing, and it has no options.
+This command does one thing.
 
 It prints a line for every module, similar to go list, and a line for every indirect dependency.
 
@@ -141,7 +139,7 @@ This is what it looks like.
 
 ---
 
-# Trick 3
+# Tool 3
 ## `go mod why <pkg>`
 ## `go mod why -m <module>`
 <!--
@@ -149,10 +147,31 @@ The final command is `go mod why`.
 
 This command is for understanding why you have a particular dependency.
 
-It'll tell you which packages within your module are importing the dependency, and it'll show you the dependency chain. So if you go mod why C, and A imports B that imports C, it'll show you that chain.
+It'll tell us which packages within our module are importing the dependency, and it'll show us the dependency chain. So if you go mod why C, and A imports B, and B imports C, it'll show us that chain.
 
 go mod why google.golang.org/grpc
 go mod why -m github.com/stretchr/testify
+-->
+
+---
+
+# Tool 4
+## install: `go get github.com/stellar/golistcmp`
+## `golistcmp <go list before> <go list after>`
+<!--
+The final command is `golistcmp`.
+
+This command isn't built in to Go, it's a command that we created. It generates easy to understand comparisons for go list outputs.
+
+So if we upgrade one dependency, and that in turn upgrades many dependencies, golistcmp shows us clearly what all the changing dependencies are, and gives us links to their diffs so that we can understand what is changing.
+
+This command is for understanding why you have a particular dependency.
+
+go get github.com/stellar/golistcmp
+go list -m -json all > go.list.before
+go get -u github.com/stretchr/testify
+go list -m -json all > go.list.after
+golistcmp
 -->
 
 ---
@@ -161,6 +180,7 @@ go mod why -m github.com/stretchr/testify
 ## `go list -m all`
 ## `go mod graph`
 ## `go mod why`
+## `golistcmp`
 
 <!--
 And that's it, there are three commands you can use to understand what dependencies you have and why you have them.
