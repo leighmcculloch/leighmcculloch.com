@@ -8,59 +8,49 @@
 
   <meta name="viewport" content="width=device-width">
 
-  {{ if .IsHome -}}
-  <title>Leigh McCulloch &middot; Software Engineer</title>
-  <meta name="description" content="Software Engineer / Go / Ruby">
-  <meta property="og:title" content="Leigh McCulloch &middot; Software Engineer">
-  <meta property="og:description" content="Software Engineer / Go / Ruby">
-  {{- else if .IsPage -}}
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Title }}">
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:description" content="{{ .Title }}">
-  {{- else -}}
-  <title>Leigh McCulloch &middot; {{ .Title }}</title>
-  <meta name="description" content="{{ .Title }}">
-  <meta property="og:title" content="Leigh McCulloch &middot; {{ .Title }}">
-  <meta property="og:description" content="{{ .Title }}">
-  {{- end }}
-
   <meta property="og:url" content="{{ .Permalink | absURL }}">
   <meta name="twitter:site" content="@___leigh___">
 
   {{ if .IsHome -}}
-  <meta property="og:type" content="profile">
-  <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
+    <title>Leigh McCulloch &middot; Software Engineer</title>
+    <meta name="description" content="Software Engineer / Go / Ruby">
+    <meta property="og:title" content="Leigh McCulloch">
+    <meta property="og:description" content="Software Engineer / Go / Ruby">
+  {{- else if .IsPage -}}
+    <title>{{ .Title }}</title>
+    <meta name="description" content="{{ .Description }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Description }}">
   {{- else -}}
-    {{ if and (.IsPage) (eq .Section "talks") -}}
-      {{$image := $.Param "talk_image"}}
-      {{if $image}}
-      <meta property="og:image" content="{{ .Permalink | absURL }}{{ $image }}">
-      <meta property="twitter:image" content="{{ .Permalink | absURL }}{{ $image }}">
-      {{else}}
+    <title>Leigh McCulloch &middot; {{ .Title }}</title>
+    <meta name="description" content="{{ .Title }}">
+    <meta property="og:title" content="Leigh McCulloch &middot; {{ .Title }}">
+    <meta property="og:description" content="{{ .Title }}">
+  {{- end }}
+
+  {{ if .IsHome -}}
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
+    <meta name="twitter:card" content="summary">
+  {{- else if and (.IsPage) (eq .Section "talks") -}}
+    {{with $image := $.Param "talk_image"}}
+      <meta property="og:image" content="{{ $.Permalink | absURL }}{{ $image }}">
+    {{else}}
       <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
-      <meta property="twitter:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
-      {{end}}
-      {{$player := $.Param "talk_player"}}
-      {{if $player}}
+    {{end}}
+    {{with $player := $.Param "talk_player"}}
       <meta property="og:type" content="video.other">
       <meta name="twitter:card" content="player">
       <meta name="twitter:player" content="{{$player}}">
       <meta name="twitter:player:width" content="1280">
       <meta name="twitter:player:height" content="720">
-      {{else}}
+    {{else}}
       <meta name="twitter:card" content="summary">
-      <meta name="twitter:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
-      {{end}}
-    {{- else -}}
+    {{end}}
+  {{- else -}}
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
-    {{- end}}
-  {{- end }}
+  {{- end}}
 
   <!-- CSS -->
   <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
