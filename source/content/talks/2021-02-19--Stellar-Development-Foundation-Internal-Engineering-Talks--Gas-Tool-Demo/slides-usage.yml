@@ -1,0 +1,14 @@
+speed: 10
+lines:
+- prompt: $
+  in: gas
+- out: 'fork-stretchr-testify/'
+- out: '  master               ↑  origin/master'
+- out: '  base                    <none>'
+- out: 'gs/'
+- out: '  master               ↑↓ origin/master'
+- out: 'helloworld/'
+- out: '  push-with-request       <none>'
+- out: '  add-vcr-2           M   origin/add-vcr-2'
+- out: '  add-vcr              ↑↓ origin/add-vcr'
+- out: ''
