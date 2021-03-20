@@ -8,7 +8,7 @@ Docker 1.19.x came with [Contexts]. Contexts are useful if you want the local Do
 
 It's really easy to get setup. You use the following command to create a context on the client machine:
 ```
-docker context create <context-name> ssh://<username>@<host>
+docker context create <context-name> --docker "host=ssh://<username>@<host>"
 ```
 
 Then select that context with:
