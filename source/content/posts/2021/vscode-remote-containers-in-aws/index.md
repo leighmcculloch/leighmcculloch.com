@@ -29,7 +29,9 @@ DOCKER_HOST=ssh://ubuntu@<hostname-or-ip> code
 
 Large instances like the `m5zn.12xlarge` can be expensive though, so I use an
 AWS EC2 Launch Template with the following User Data to quickly bring up an
-instance ready to go for Remote Containers.
+instance ready to go for Remote Containers. Since it is fast to bring up a
+new instance, I can stop or terminate an instance the moment I'm not using
+it.
 
 I connect to the instance via [Tailscale] so I don't have to deal with
 changing public IPs, but you could just assign a public IP to the instance
