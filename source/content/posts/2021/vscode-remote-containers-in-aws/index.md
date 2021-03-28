@@ -16,7 +16,7 @@ while I develop in Ubuntu.
 The good news is that once setup with Remote Containers we aren't limited to
 running Docker containers on our local system.
 
-If you start VSCode at the commandline with the DOCKER_HOST environment
+If you start VSCode at the commandline with the `DOCKER_HOST` environment
 variable set to a remote instance that has Docker installed, VSCode will run
 the containers there. This opens up the possibility of using large instances,
 such as AWS's `m5zn` instance types that have up to 48x 4.5GHz vCPUs. I've
