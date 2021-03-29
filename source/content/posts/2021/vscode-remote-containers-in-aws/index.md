@@ -43,9 +43,9 @@ User Data:
 
 hostnamectl set-hostname awsdevenv
 
+addgroup --system docker
+adduser ubuntu docker
 snap install docker
-groupadd docker
-usermod -a -G docker ubuntu
 
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | apt-key add -
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | tee /etc/apt/sources.list.d/tailscale.list
@@ -53,8 +53,6 @@ apt-get update
 apt-get install tailscale
 
 tailscale up -authkey <tskey>
-
-reboot
 ```
 
 Finally I use the dotfiles feature of VSCode Remote Containers to setup any
