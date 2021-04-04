@@ -8,16 +8,18 @@ VSCode's [Remote Container] support is game changing. It provides
 reproducible development environments with a UI that runs smoothly on my Mac
 while I develop in Ubuntu.
 
-I recently started using VSCode. I'm maybe late to this party but I was stuck
-in the world of VIM. My VIM setup was more than just a vimrc, but a
-Ubuntu development environment sitting inside Docker where I could spin up
-multiple reproducible environments.
+I recently started using VSCode. I'm maybe late to this party. I was stuck in
+the world of VIM. My VIM setup was more than just a vimrc, but a Ubuntu
+development environment sitting inside Docker where I could spin up multiple
+reproducible environments. Frankly, VSCode is better for me now that I get
+that same virtual development environment experience within a highly
+customizable UI.
 
-The big win I find using Docker for virtual development environments is that
-once setup with Remote Containers I'm not limited to running Docker
-containers on my local system.
+The big win I find using VSCode and Docker for virtual development
+environments is that once setup with Remote Containers I'm not limited to
+running Docker containers on my local system.
 
-If you start VSCode at the commandline with the `DOCKER_HOST` environment
+If I start VSCode at the commandline with the `DOCKER_HOST` environment
 variable set to a remote instance that has Docker installed, VSCode will run
 the containers there.
 
