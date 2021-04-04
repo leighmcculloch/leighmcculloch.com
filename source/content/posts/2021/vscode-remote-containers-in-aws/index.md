@@ -4,34 +4,39 @@ title = "VSCode: Remote Containers in AWS"
 date = 2021-03-26
 +++
 
+VSCode's [Remote Container] support is game changing. It provides
+reproducible development environments with a UI that runs smoothly on my Mac
+while I develop in Ubuntu.
+
 I recently started using VSCode. I'm maybe late to this party but I was stuck
 in the world of VIM. My VIM setup was more than just a vimrc, but a
 Ubuntu development environment sitting inside Docker where I could spin up
 multiple reproducible environments.
 
-VSCode's [Remote Container] support is game changing. It provides
-reproducible development environments with a UI that runs smoothly on my Mac
-while I develop in Ubuntu.
-
-The good news is that once setup with Remote Containers we aren't limited to
-running Docker containers on our local system.
+The big win I find using Docker for virtual development environments is that
+once setup with Remote Containers I'm not limited to running Docker
+containers on my local system.
 
 If you start VSCode at the commandline with the `DOCKER_HOST` environment
 variable set to a remote instance that has Docker installed, VSCode will run
-the containers there. This opens up the possibility of using large instances,
-such as AWS's `m5zn` instance types that have up to 48x 4.5GHz vCPUs. I've
-found this can rapidly speed up compiling of large applications, such as
-[stellar-core].
+the containers there.
 
 ```
 DOCKER_HOST=ssh://ubuntu@<hostname-or-ip> code
 ```
+
+This opens up the possibility of using large instances, such as AWS's `m5zn`
+instance types that have up to 48x 4.5GHz vCPUs. I've found this rapidly
+speeds up compiling large applications, such as [stellar-core].
 
 Large instances like the `m5zn.12xlarge` can be expensive though, so I use an
 AWS EC2 Launch Template with the following User Data to quickly bring up an
 instance ready to go for Remote Containers. Since it is fast to bring up a
 new instance, I can stop or terminate an instance the moment I'm not using
 it.
+
+I have a selection of [favorite instance types] that are focused on high-CPU
+speeds.
 
 I connect to the instance via [Tailscale] so I don't have to deal with
 changing public IPs, but you could just assign a public IP to the instance
@@ -76,3 +81,4 @@ Context via SSH with macOS].
 [Tailscale]: https://tailscale.com
 [stellar-core]: https://github.com/stellar/stellar-core
 [my dotfiles]: https://github.com/leighmcculloch/dotfiles
+[favorite instance types]: https://instances.vantage.sh/?region=us-west-1&cost_duration=weekly&compare_on=true&selected=m5zn.12xlarge,m6g.16xlarge,c6g.16xlarge,m5zn.6xlarge,m6g.12xlarge,c6g.12xlarge,m6g.8xlarge,c6g.8xlarge,m5zn.3xlarge,m6g.4xlarge,c6g.4xlarge,t4g.2xlarge
