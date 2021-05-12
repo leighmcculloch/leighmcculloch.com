@@ -24,6 +24,7 @@ This is what I needed to do to set it up:
 Name: `<build-project-number>@cloudbuild.gserviceaccount.com`
 
 Roles:
+
  - `Service Account User` - Allows the build project to act as a service account user.
  - `App Engine Deployer` - Allows the build project to deploy an app.
  - `App Engine Service Admin` - Allows the build project to promote and scale a new version being deployed.
