@@ -24,7 +24,7 @@ This is what I needed to do to set it up:
 Name: `<build-project-number>@cloudbuild.gserviceaccount.com`
 
 Roles:
-
+ - `Service Account User` - Allows the build project to act as a service account user.
  - `App Engine Deployer` - Allows the build project to deploy an app.
  - `App Engine Service Admin` - Allows the build project to promote and scale a new version being deployed.
  - `Storage Object Admin` - Allows the build project to write app files to Google Cloud Storage which is part of the deployment process.
@@ -47,3 +47,5 @@ steps:
 You can use the `$SHORT_SHA` variable substitution to set the version of the App Engine deployment to match the 7 character short sha of the commit being deployed.
 
 Push a commit to the GitHub repository and watch the Build history in the build project. You should see a new build show up that will deploy the app to the app project.
+
+**Update (2021-05-11):** In October 2020 Google Cloud started requiring the `Service Account User` role as well. There are details about this on Google's issue tracker: https://issuetracker.google.com/issues/170538212.
