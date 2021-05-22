@@ -129,7 +129,10 @@ Software engineers use pointers in Go to indicate the lack of value or pass owne
 - https://github.com/golang/go/issues/7054
 - https://github.com/golang/go/issues/19966
 - https://github.com/golang/go/issues/9097
-
+- https://github.com/golang/go/issues/36884
+- https://github.com/golang/go/issues/30177
+- https://github.com/golang/go/issues/22729
+- https://github.com/golang/go/issues/28133
 
 ## Experiments
 
