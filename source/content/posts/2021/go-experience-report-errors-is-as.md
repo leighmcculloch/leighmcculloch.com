@@ -136,7 +136,7 @@ I think these functions would be clearer for the reader, and safer for the calle
 
 The code I write using errors.Is and errors.As might be clearer if:
 
-- `errors.As` was named `errors.Is`
+- `errors.As` was named `errors.Assign`
 - `errors.Is` was split into two functions:
   - `errors.Equal` that unwraps and checks for equality.
   - `errors.Match` that unwraps and checks for partial equality.
