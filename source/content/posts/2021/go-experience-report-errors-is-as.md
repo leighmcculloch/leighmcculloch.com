@@ -132,7 +132,7 @@ not equal.
 
 ## Final Thoughts
 
-I think these functions would be clearer for the reader, and safer for the caller, if they had been given different names and the caller could choose between exact matching semantics and partial matching semantics.
+I think these functions would be clearer for the reader, and safer for the caller, if they had been given different names and the caller could choose between equality semantics and partial matching semantics.
 
 The code I write using errors.Is and errors.As might be clearer if:
 
