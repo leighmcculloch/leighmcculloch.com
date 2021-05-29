@@ -127,8 +127,6 @@ The code I write using errors.Is and errors.As would be clearer if:
   - `errors.Equals` that unwraps and checks for equality.
   - `errors.Match` that unwraps and checks for partial equality.
 
-## Implementation
-
 An implementation for experimentation for what this could look like is at:
 
 [4d63.com/errors](https://4d63.com/errors)
