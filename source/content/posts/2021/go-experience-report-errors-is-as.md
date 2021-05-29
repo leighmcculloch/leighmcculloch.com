@@ -100,7 +100,19 @@ scanning code. They differ by one character, and visually look very similar.
 
 The function names Is and As are ambiguous.
 
-In natural language when I speak about wanting to know whether an error _is_ an ErrorNotFound, my inclination is to want to write `if errors.Is(err, &ErrorNotFound)`. I don't naturally think about can I get the error _as_ an ErrNotFound.
+In natural language when I speak about wanting to know whether an error _is_ an
+ErrorNotFound, my inclination is to want to write:
+
+```go
+if errors.Is(err, &ErrorNotFound{}) {
+```
+
+However, I need to write:
+```go
+if errors.As(err, &ErrorNotFound{}) {
+```
+
+I don't naturally speak about wanting to get the error _as_ an ErrNotFound.
 
 This is something that becomes learned over time but it doesn't help new readers
 of Go code using errors.Is.
