@@ -94,8 +94,7 @@ that value by being very clear.
 ### Visual Similarity
 
 It is difficult to distinguish between `errors.Is` and `errors.As` when quickly
-scanning code. They only differ by one characters, and so visually look very
-similar. 
+scanning code. They differ by one character, and visually look very similar. 
 
 ### Semantic Ambiguity
 
