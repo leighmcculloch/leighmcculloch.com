@@ -1,6 +1,6 @@
 +++
 slug = "go-experience-report-pointers"
-title = "Go: Experience report: Pointers"
+title = "Go: Experience Report: Pointers"
 date = 2017-07-25
 disqus_identifier = "leighmcculloch.com-source/go-experience-reports/pointers.md"
 aliases = [
