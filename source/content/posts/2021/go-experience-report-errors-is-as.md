@@ -121,11 +121,14 @@ of Go code using errors.Is.
 
 The matching capabilities of Is are very powerful, however it is difficult to
 understand what an errors.Is check will do without inspecting the implementation
-details of errors. The Is function is intended for both complete matching and
-partial matching and the caller cannot choose which takes place. The caller
-cannot choose an equals over a partial match or some other logic being executed.
-It is the caller who should be in control when deciding if an error is the error
-they are looking for.
+details of an error.
+
+The Is function is intended for both complete equality checks and partial
+matching and the caller has no control over which takes place.
+
+The caller may not be in control of when two errors are considered equal, but
+the caller should be in control over when two errors are considered a match but
+not equal.
 
 ## Final Thoughts
 
