@@ -120,7 +120,7 @@ they are looking for.
 
 I think these functions would be clearer for the reader, and safer for the caller, if they had been given different names and the caller could choose between exact matching semantics and partial matching semantics.
 
-The code I write using errors.Is and errors.As would be clearer if:
+The code I write using errors.Is and errors.As might be clearer if:
 
 - `errors.As` was named `errors.AssignsTo`
 - `errors.Is` was split into two functions:
