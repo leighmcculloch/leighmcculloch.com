@@ -23,41 +23,39 @@ Set the `DOCKER_HOST` environment variable:
 eval $(dockerhost env)
 ```
 
-Use Docker as you normally would:
+Use Docker as you normally do:
 ```
 docker build ...
 ```
 
-Containers, and their popularity via [Docker], has been one of those pivotal
-technologies in my toolbox for a number of years. For deployment yes, but more
-so for my development environments. I'm a Linux native living in a Mac world and
-Docker has allowed me to develop software using the Linux environment and tools
-I'm familiar with. Most recently I've been using Docker's Mac product, [Docker
-Desktop], like many developers who work on Mac's.
+[Docker] has been a pivotal technology in my toolbox for a number of years.  For
+deployment yes, but more so for my development environment. I'm a Linux native
+living in a Mac world and Docker has made it possible to develop software using
+the Linux tools I'm familiar with. Most recently I've been using Docker's Mac
+product, [Docker Desktop], like many developers who use Macs.
 
-For all the benefits and wonders Docker provides to me with reproducible
-development environments, it hasn't been all rainbows and sunshine. For about a
-year I've been experiencing high CPU usage in Docker. I'll be working hard
-towards a deadline, then enter high CPU Docker, and it feels like my computer is
-old and slow. Each time this happens I get one step closer to switching back to
-Linux.
+As wonderful as it is that Docker provides me with reproducible development
+environments, it hasn't been all rainbows and sunshine. For about a year I've
+been experiencing random high CPU usage in Docker. It occurs at the most
+inopportune time, high CPU Docker, causing my computer to crawl to a halt.
 
-On August 31st, 2021, Docker announces a new pricing model for Docker Desktop.
+On August 31st, 2021, Docker announced a new pricing model for Docker Desktop.
 This raised the question for me, what else is going to change about Docker's
 licensing in the future. It was the final push I needed to look at other options
-virtualized or containerized workflows on Mac.
+for virtualized or containerized workflows on Mac. I tried Podman, VMWare
+Fusion's vtcl, qemu, Vagrant, and Multipass, but let's face it, Docker is convenient.
 
-Thankfully all we need to run Docker on Mac is a virtual machine to host the
-Docker daemon. The Docker client is available for Mac and can connect over SSH
-or TCP to any remote daemon.
+Thankfully all we need to run Docker on Mac without Docker Desktop is a virtual
+machine to host the Docker daemon. The Docker client is available for Mac and
+can connect over SSH or TCP to any remote daemon.
 
-Enter Multipass. [Multipass] is a convenience tool for launching Ubuntu virtual
+Enter Multipass. [Multipass] is a convenient tool for launching Ubuntu virtual
 machines. It turns out it works really well on Mac and at this point might be
 the simplest low-effort method for running Linux VMs on Mac, assuming you're
 into Ubuntu.
 
 Needing to setup a virtual machine from scratch with Docker is tedious, and so I
-created Dockerhost to wrap the process. Dockerhost is a zsh script that wraps
+created [Dockerhost] to wrap the process. Dockerhost is a script that wraps
 Multipass and launches Ubuntu VMs that have Docker running and accessible over
 TCP.
 
@@ -71,12 +69,13 @@ have any feedback, please open an issue at:
 https://github.com/leighmcculloch/dockerhost
 
 _Why not [Podman]? I'm excited about Podman and I expect to be using it in the
-future, but it isn't compatible wit VSCode and I ran into a few issues running
+future, but it isn't compatible with VSCode and I ran into a few issues running
 images so it isn't quite a Docker replacement for me. I'm very keen to use it
 though, and I just had [my first
 contribution](https://github.com/containers/buildah/commit/58a16f97689cc96b1a69a03d773c4399413f8854)
-to the Podman ecosystem merged last week, which was thrilling. It's not quite a
-drop-in replacement for my workflows by I'll be keeping my eye on it._
+to the Podman sibling Buildah merged last week, which was thrilling. It's not
+quite a drop-in replacement for my workflows yet by I'll be keeping my eye on
+it._
 
 [Dockerhost]: https://github.com/leighmcculloch/dockerhost
 [Docker]: https://docker.com
