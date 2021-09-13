@@ -74,11 +74,11 @@ https://github.com/leighmcculloch/dockerhost
 
 _Why not [Podman]? I'm excited about Podman and I expect to be using it in the
 future, but it isn't compatible with VSCode and I ran into a few issues running
-images so it isn't quite a Docker replacement for me. I'm very keen to use it
-though, and I just had [my first
+images so it isn't quite a Docker replacement for me. I'm very keen to use it,
+and I just had [my first
 contribution](https://github.com/containers/buildah/commit/58a16f97689cc96b1a69a03d773c4399413f8854)
-to the Podman sibling Buildah merged last week, which was thrilling. It's not
-quite a drop-in replacement for my workflows yet by I'll be keeping my eye on
+to Podman's sibling, Buildah, merged last week, which is thrilling. It's not
+quite a drop-in replacement for my workflow yet but I'll be keeping my eye on
 it._
 
 _Why not qemu? You overestimate my current ability and the amount of free time I
