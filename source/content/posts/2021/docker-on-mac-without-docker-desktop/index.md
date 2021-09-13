@@ -41,10 +41,11 @@ most inopportune time, high CPU Docker, causing my computer to crawl to a halt,
 fans spinning loudly like a jet taking off.
 
 On August 31st, 2021, Docker announced a new pricing model for Docker Desktop.
-This raised the question for me, what else is going to change about Docker's
-licensing in the future. It was the final push I needed to look at other options
-for virtualized or containerized workflows on Mac. I tried Podman, VMWare
-Fusion's vtcl, qemu, Vagrant, and Multipass, but let's face it, Docker is convenient.
+This raised the question for me, what else is going to change about this
+product. It was the final push I needed to look at other options for virtualized
+or containerized workflows on Mac. I tried Podman, VMWare Fusion's vctl, qemu,
+Vagrant, and Multipass, but let's face it, Docker is convenient and its ubiquity
+is unparalleled.
 
 Thankfully all we need to run Docker on Mac without Docker Desktop is a virtual
 machine to host the Docker daemon. The Docker client is available for Mac and
@@ -52,7 +53,7 @@ can connect over SSH or TCP to any remote daemon.
 
 Enter Multipass. [Multipass] is a convenient tool for launching Ubuntu virtual
 machines. It turns out it works really well on Mac and at this point might be
-the simplest low-effort method for running Linux VMs on Mac, assuming you're
+the simplest lowest-effort tool for running Linux VMs on Mac, assuming you're
 into Ubuntu.
 
 Needing to setup a virtual machine from scratch with Docker is tedious, and so I
