@@ -36,8 +36,9 @@ product, [Docker Desktop], like many developers who use Macs.
 
 As wonderful as it is that Docker provides me with reproducible development
 environments, it hasn't been all rainbows and sunshine. For about a year I've
-been experiencing random high CPU usage in Docker. It occurs at the most
-inopportune time, high CPU Docker, causing my computer to crawl to a halt.
+been experiencing random high CPU usage with Docker Desktop. It occurs at the
+most inopportune time, high CPU Docker, causing my computer to crawl to a halt,
+fans spinning loudly like a jet taking off.
 
 On August 31st, 2021, Docker announced a new pricing model for Docker Desktop.
 This raised the question for me, what else is going to change about Docker's
