@@ -68,7 +68,7 @@ CPU woes.
 I'm using Dockerhost for my own Docker driven development environments. If you
 have any feedback, please open an issue at:
 
-http://github.com/leighmcculloch/dockerhost
+https://github.com/leighmcculloch/dockerhost
 
 _Why not [Podman]? I'm excited about Podman and I expect to be using it in the
 future, but it isn't compatible wit VSCode and I ran into a few issues running
@@ -78,6 +78,7 @@ contribution](https://github.com/containers/buildah/commit/58a16f97689cc96b1a69a
 to the Podman ecosystem merged last week, which was thrilling. It's not quite a
 drop-in replacement for my workflows by I'll be keeping my eye on it._
 
+[Dockerhost]: https://github.com/leighmcculloch/dockerhost
 [Docker]: https://docker.com
 [Docker Desktop]: https://docker.com/products/docker-desktop
 [Multipass]: https://multipass.run
