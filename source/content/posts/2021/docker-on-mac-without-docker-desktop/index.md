@@ -35,10 +35,10 @@ the Linux tools I'm familiar with. Most recently I've been using Docker's Mac
 product, [Docker Desktop], like many developers who use Macs.
 
 As wonderful as it is that Docker provides me with reproducible development
-environments, it hasn't been all rainbows and sunshine. For about a year I've
-been experiencing random high CPU usage with Docker Desktop. It occurs at the
-most inopportune time, high CPU Docker, causing my computer to crawl to a halt,
-fans spinning loudly like a jet taking off.
+environments, Docker Desktop hasn't been all rainbows and sunshine. For about a
+year I've been experiencing random high CPU usage with Docker Desktop. It occurs
+at the most inopportune time, high CPU Docker, causing my computer to crawl to a
+halt, fans spinning loudly like a jet taking off.
 
 I've been wanting to look at alternatives to Docker Desktop for sometime, but
 for the most part there was always something else more important to do. However,
