@@ -40,12 +40,14 @@ been experiencing random high CPU usage with Docker Desktop. It occurs at the
 most inopportune time, high CPU Docker, causing my computer to crawl to a halt,
 fans spinning loudly like a jet taking off.
 
-On August 31st, 2021, Docker announced a new pricing model for Docker Desktop.
-This raised the question for me, what else is going to change about this
-product. It was the final push I needed to look at other options for virtualized
-or containerized workflows on Mac. I tried Podman, VMWare Fusion's vctl, qemu,
-Vagrant, and Multipass, but let's face it, Docker is convenient and its ubiquity
-is unparalleled.
+I've been wanting to look at alternatives to Docker Desktop for sometime, but
+for the most part there was always something else more important to do. However,
+on August 31st, 2021, Docker announced a new pricing model for Docker Desktop.
+I don't have any huge issue with this, but it's inconvenient and the friction of
+"do I need a subscription?" flowchart was the final push I needed to explore
+other options for virtualized or containerized workflows on Mac. I tried Podman,
+VMWare Fusion's vctl, qemu, Vagrant, and Multipass, but let's face it, Docker is
+convenient and its ubiquity is unparalleled.
 
 Thankfully all we need to run Docker on Mac without Docker Desktop is a virtual
 machine to host the Docker daemon. The Docker client is available for Mac and
