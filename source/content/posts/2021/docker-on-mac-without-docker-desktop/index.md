@@ -81,6 +81,9 @@ to the Podman sibling Buildah merged last week, which was thrilling. It's not
 quite a drop-in replacement for my workflows yet by I'll be keeping my eye on
 it._
 
+_Why not qemu? You overestimate my current ability and the amount of free time I
+have.  😅_
+
 [Dockerhost]: https://github.com/leighmcculloch/dockerhost
 [Docker]: https://docker.com
 [Docker Desktop]: https://docker.com/products/docker-desktop
