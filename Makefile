@@ -6,3 +6,6 @@ clean:
 
 build: clean
 	hugo -s source
+
+deploy: build
+	fly deploy --strategy bluegreen
