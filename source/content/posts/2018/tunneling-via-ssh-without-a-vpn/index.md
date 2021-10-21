@@ -37,11 +37,11 @@ Configure your browser to connect to the proxy that's running on localhost. Depe
 
 Example (Mac OS):
 
-![](screenshot-1.png)
+![](screenshot-mac.png)
 
 Example (Firefox):
 
-![](screenshot-2.png)
+![](screenshot-ff.png)
 
 ### Configure DNS
 
