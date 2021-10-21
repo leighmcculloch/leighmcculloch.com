@@ -19,5 +19,12 @@
       "respectDoNotTrack": true,
       "useSessionStorage": true
     }
+  },
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      }
+    }
   }
 }
