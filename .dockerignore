@@ -1,3 +1,5 @@
 *
-!nginx.conf
-!source/public
+!go.mod
+!go.sum
+!main.go
+!source

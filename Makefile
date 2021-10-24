@@ -7,5 +7,5 @@ clean:
 build: clean
 	hugo -s source
 
-deploy: build
+deploy:
 	fly deploy --strategy bluegreen
