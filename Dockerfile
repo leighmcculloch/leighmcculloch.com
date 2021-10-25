@@ -21,8 +21,8 @@ RUN go mod download
 FROM golang AS go
 WORKDIR /go/src/
 COPY --from=gomod /go/pkg/mod /go/pkg/mod
-COPY --from=hugo /source/public /public
-COPY . .
+COPY --from=hugo /source/public ./source/public
+COPY go.mod go.sum main.go ./
 RUN CGO_ENABLED=0 go install
 
 FROM scratch
