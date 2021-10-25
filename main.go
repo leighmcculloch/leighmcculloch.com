@@ -3,6 +3,7 @@ package main
 import (
 	"compress/flate"
 	"embed"
+	"encoding/json"
 	"io/fs"
 	"log"
 	"net/http"
@@ -44,7 +45,7 @@ func main() {
 			AllowedOrigins: []string{"*"},
 		}))
 		r.Handle("/.well-known/stellar.toml", http.FileServer(http.FS(publicSub)))
-		r.Handle("/stellar/federation.json", http.FileServer(http.FS(publicSub)))
+		r.HandleFunc("/stellar/federation.json", stellarFederation)
 	})
 
 	r.Handle("/*", http.FileServer(http.FS(publicSub)))
@@ -55,6 +56,34 @@ func main() {
 	}
 	logger.Printf("Listening on :%s", port)
 	err := http.ListenAndServe(":"+port, r)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func stellarFederation(w http.ResponseWriter, r *http.Request) {
+	qs := r.URL.Query()
+	typ := qs.Get("type")
+	if typ != "name" {
+		http.NotFound(w, r)
+		return
+	}
+	q := qs.Get("q")
+	if q != "leigh*leighmcculloch.com" {
+		http.NotFound(w, r)
+		return
+	}
+	err := json.NewEncoder(w).Encode(struct {
+		StellarAddress string `json:"stellar_address"`
+		AccountID      string `json:"account_id"`
+		MemoType       string `json:"memo_type"`
+		Memo           string `json:"memo"`
+	}{
+		StellarAddress: "leigh*leighmcculloch.com",
+		AccountID:      "GCUUZV5AFZWZT5ULVJZ6UFXFQ4G6XXDR4GSDX7OSBD4TCAKFRWKLSPWK",
+		MemoType:       "text",
+		Memo:           "via federation",
+	})
 	if err != nil {
 		panic(err)
 	}
