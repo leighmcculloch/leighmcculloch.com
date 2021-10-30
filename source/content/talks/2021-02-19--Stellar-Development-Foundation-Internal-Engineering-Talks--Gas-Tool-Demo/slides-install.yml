@@ -1,8 +1,0 @@
-speed: 10
-lines:
-- prompt: $
-  in: brew install 4d63/gas/gas
-- out: '==> Installing gas from 4d63/gas'
-- out: '==> Downloading https://github.com/leighmcc...'
-- out: '    /usr/local/Cellar/gas/3.0.3: 4 files, 1.9MB, built in 9 seconds'
-- out: ''
