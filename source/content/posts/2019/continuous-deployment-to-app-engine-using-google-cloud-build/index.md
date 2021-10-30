@@ -5,7 +5,7 @@ date = 2019-01-03
 disqus_identifier = "wblpcnl"
 +++
 
-I recently looked at how I could setup my [Google App Engine](https://cloud.google.com/appengine/) apps to continuously deploy. I host the source code for these apps in [GitHub](https://github.com) and typically use [Travis CI](https://travis-ci.com) for builds, but getting Travis CI to do the deployment would mean giving it admin credentials to App Engine and I've avoided introducing secrets into my Travis CI config because I don't like granting heavy admin permissions across services.
+I recently looked at how I could setup my [Google App Engine](https://cloud.google.com/appengine/) apps to continuously deploy. I host the source code for these apps in [GitHub](https://github.com) and typically use ~[Travis CI](https://travis-ci.com)~ [GitHub Actions](https://github.com/features/actions) for builds, but getting it to do the deployment would mean giving it admin credentials to App Engine and I've avoided introducing secrets into my CI config because I don't like granting heavy admin permissions across services.
 
 In July 2018 [Google Cloud Build](https://cloud.google.com/cloud-build/) added support for a [GitHub App](https://github.com/apps/google-cloud-build) integration that connects Build to GitHub. Pushes to GitHub will kick off builds in Build and Build can be configured with permissions to deploy to App Engine without needing to expose write permissions to other services.
 
@@ -50,3 +50,5 @@ You can use the `$SHORT_SHA` variable substitution to set the version of the App
 Push a commit to the GitHub repository and watch the Build history in the build project. You should see a new build show up that will deploy the app to the app project.
 
 **Update (2021-05-11):** In October 2020 Google Cloud started requiring the `Service Account User` role as well. There are details about this on Google's issue tracker: https://issuetracker.google.com/issues/170538212.
+
+**Update (2021-10-30):** I now use GitHub Actions instead of Travis CI after [this incident](https://travis-ci.community/t/security-bulletin/12081).
