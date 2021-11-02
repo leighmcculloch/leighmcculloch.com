@@ -1,5 +1,3 @@
-# https://github.com/mholt/archiver/releases
-
 FROM curlimages/curl AS curl
 RUN curl -L -o /tmp/arc https://github.com/mholt/archiver/releases/download/v3.5.0/arc_3.5.0_linux_amd64
 RUN chmod +x /tmp/arc
