@@ -24,16 +24,28 @@
     <span class="talk-event">
       Event: {{$.Param "talk_event"}}
     </span>
-    {{with $slides := $.Param "talk_slides"}}
-    <span class="talk-slides">
-      Slides: <a href="{{$slides}}" target="_blank" rel="noopener noreferrer">Slides</a>
+    <span class="post-author">
+      {{$authors := $.Param "author"}}
+      {{with $authors}}
+        {{if gt (len $authors) 1}}Speakers:{{else}}Speaker:{{end}}
+        {{range $index, $author := $authors}}
+          {{if $index}}and{{end}}
+          <a href="{{with (index $.Site.Data.authors $author "url")}}{{.}}{{else}}{{$.Site.BaseURL}}{{end}}">{{index $.Site.Data.authors $author "name"}}</a>
+        {{end}}
+      {{else}}
+        Speaker: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a>
+      {{end}}
     </span>
-    {{end}}
-    {{with $slidesNotes := $.Param "talk_slides_notes"}}
     <span class="talk-slides">
-      Notes: <a href="{{$slidesNotes}}" target="_blank" rel="noopener noreferrer">Slides with Notes</a>
+      Material:
+      {{with $slides := $.Param "talk_slides"}}
+      <a href="{{$slides}}" target="_blank" rel="noopener noreferrer">Slides</a>
+      {{- end -}}
+      {{- with $slidesNotes := $.Param "talk_slides_notes" -}}
+      {{- with $slides := $.Param "talk_slides" -}}, {{end}}
+      <a href="{{$slidesNotes}}" target="_blank" rel="noopener noreferrer">Slides with Notes</a>
+      {{end}}
     </span>
-    {{end}}
     {{end}}
   </span>
 </div>
