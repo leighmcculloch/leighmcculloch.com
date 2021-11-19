@@ -8,6 +8,4 @@ talk_slides = "Slides.pdf"
 talk_slides_notes = "Slides and Notes.pdf"
 +++
 
-<a href="https://meridian.stellar.org/tech-talks/starlight-a-layer-2-payment-channel-protocol-for-the-stellar-network/">
-<img src="image.png" />
-</a>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LI_M6rWPCgQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
