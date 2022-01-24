@@ -10,7 +10,7 @@ workloads on the docker host.
 
 Install dockerhost:
 ```
-brew install 4d63/dockerhost/dockerhost
+brew install --cask 4d63/dockerhost/dockerhost
 ```
 
 Create a docker host:
