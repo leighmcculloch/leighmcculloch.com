@@ -21,9 +21,11 @@
     </span>
     {{end}}
     {{if eq .Section "talks"}}
+    {{with $.Param "talk_event"}}
     <span class="talk-event">
-      Event: {{$.Param "talk_event"}}
+      Event: {{.}}
     </span>
+    {{end}}
     <span class="post-author">
       {{$authors := $.Param "author"}}
       {{with $authors}}
@@ -36,16 +38,21 @@
         Speaker: <a href="{{ .Site.BaseURL }}">Leigh McCulloch</a>
       {{end}}
     </span>
+    {{with $slides := $.Param "talk_slides"}}
     <span class="talk-slides">
       Material:
-      {{with $slides := $.Param "talk_slides"}}
       <a href="{{$slides}}" target="_blank" rel="noopener noreferrer">Slides</a>
-      {{- end -}}
       {{- with $slidesNotes := $.Param "talk_slides_notes" -}}
-      {{- with $slides := $.Param "talk_slides" -}}, {{end}}
+      ,
       <a href="{{$slidesNotes}}" target="_blank" rel="noopener noreferrer">Slides with Notes</a>
       {{end}}
     </span>
+    {{- end -}}
+    {{with $.Param "code"}}
+    <span class="talk-slides">
+      Code: <a href="{{.}}" target="_blank" rel="noopener noreferrer">{{.}}</a>
+    </span>
+    {{- end -}}
     {{end}}
   </span>
 </div>
