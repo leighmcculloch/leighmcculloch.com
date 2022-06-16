@@ -73,6 +73,7 @@ func stellarFederation(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	err := json.NewEncoder(w).Encode(struct {
 		StellarAddress string `json:"stellar_address"`
 		AccountID      string `json:"account_id"`
