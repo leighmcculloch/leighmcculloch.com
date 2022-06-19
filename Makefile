@@ -8,4 +8,4 @@ build: clean
 	hugo -s source
 
 deploy:
-	fly deploy --local-only --strategy bluegreen
+	fly deploy --strategy bluegreen
