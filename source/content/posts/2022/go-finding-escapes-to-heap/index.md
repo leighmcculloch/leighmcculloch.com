@@ -2,6 +2,7 @@
 slug = "go-finding-escapes-to-heap"
 title = "Go: Finding Escapes to Heap"
 date = 2022-12-26
+image = "image.jpg"
 +++
 
 I rarely need to profile the Go code I work on, but when I do I spend most of my

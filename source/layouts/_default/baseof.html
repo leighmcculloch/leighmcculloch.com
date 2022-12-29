@@ -50,6 +50,11 @@
   {{- else -}}
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary">
+    {{with $image := $.Param "image"}}
+      <meta property="og:image" content="{{ $.Permalink | absURL }}{{ $image }}">
+    {{else}}
+      <meta property="og:image" content="https://leighmcculloch.com/images/c-bg-lightsshadow-square-500.png">
+    {{end}}
   {{- end}}
 
   <!-- CSS -->
