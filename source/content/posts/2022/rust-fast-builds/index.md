@@ -2,6 +2,7 @@
 slug = "rust-fast-builds"
 title = "Rust: Fast Builds"
 date = 2022-12-16
+image = "image.jpg"
 +++
 
 If you regularly program in languages like Go, Ruby, Python, JavaScript, or
