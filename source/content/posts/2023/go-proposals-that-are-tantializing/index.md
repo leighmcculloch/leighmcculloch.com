@@ -5,6 +5,9 @@ date = 2023-01-02
 image = "image.jpg"
 +++
 
+**Updated Fri, Jan 6, 2023: Added comments about the new sum types as interfaces
+proposal.**
+
 I like programming in Go, just the way it is. I said the same thing when I first
 started playing with it in 2015 and now in 2023. But I have to admit every new
 feature that has been added has been awesome. I can't imagine now programming in
@@ -46,6 +49,22 @@ Ordered by my current level of interest.
 
    I've made this mistake too many times. It feels like something worth fixing.
 
+- **~~[#19412]~~, ~~[#54685]~~, [#57644]: add sum types / discriminated unions**
+
+   The proposal I am most excited about is [#57644]. It presents sum types as
+   interfaces with a closed set of types. It's simple, it integrates seamlessly
+   with existing Go code because sum types are just interfaces. See my thoughts
+   about the proposal [here](https://github.com/golang/go/issues/57644#issuecomment-1374393338).
+
+   I'm not very excited by either of the other proposals, as they add a lot to
+   the language.
+
+   I frequently work with the [Stellar XDR] (See [RFC 4506]) and XDR contains
+   discriminated union types. In languages like Go this ends up being
+   represented as structs with a discriminant field, then a pointer-field per
+   type. It works, but it's also a lot of work, easy to footgun if you aren't
+   diligent with checking you exhaustively addressed all types.
+
 - **[#19814]: add typed enum support**
 
    I'm regularly emulating enums using types and constants in Go. This actually
@@ -56,23 +75,6 @@ Ordered by my current level of interest.
    validating the enum value after it exists. Unfortunately it's so easy to
    think that in a static langauge that strongly typed enum must be valid, when
    it might not be.
-
-- **[#19412], [#54685]: add sum types / discriminated unions**
-
-   I'm not very excited by either of these proposals, but I am by the general
-   premise of some way of defining small closed set types, like interfaces, but
-   not open, and not discriminated by their types.
-
-   I frequently work with the [Stellar XDR] (See [RFC 4506]) and XDR contains
-   discriminated union types. In languages like Go this ends up being
-   represented as structs with a discriminant field, then a pointer-field per
-   type. It works, but it's also a lot of work, easy to footgun if you aren't
-   diligent with checking you exhaustively addressed all types.
-
-   The proposal I was most intrigued with was [#41716] which proposed sum types
-   via interface type sets, but it discriminated by type and not on a separate
-   list of values, which I think is important for not unnecessarily constraining
-   the use space.
 
 - **[#47487]: allow explicit conversion from function to 1-method interface**
 
@@ -97,3 +99,4 @@ Ordered by my current level of interest.
 [#41716]: https://github.com/golang/go/issues/41716
 [Stellar XDR]: http://github.com/stellar/stellar-xdr
 [RFC 4506]: https://datatracker.ietf.org/doc/html/rfc4506
+[#57644]: https://github.com/golang/go/issues/57644
