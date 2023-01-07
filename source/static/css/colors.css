@@ -1,0 +1,70 @@
+body {
+  color: #515151;
+  background-color: #fff;
+}
+a {
+  color: #268bd2;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #313131;
+}
+
+strong {
+  color: #303030;
+}
+
+.index .links div a svg { fill: #aaa; }
+.index .links.site div:nth-child(1) a:hover svg { fill:#36465d; }
+.index .links.site div:nth-child(2) a:hover svg { fill:#ff0000; }
+.index .links.social div:nth-child(1) a:hover svg { fill:#5855dc; }
+.index .links.social div:nth-child(2) a:hover svg { fill:#2daae1; }
+.index .links.social div:nth-child(3) a:hover svg { fill:#000; }
+.index .links.social div:nth-child(4) a:hover svg { fill:#007bb6; }
+.index .links.social div:nth-child(5) a:hover svg { fill:#fd6f31; }
+.index .links.money div:nth-child(1) a:hover svg { fill:#000; }
+
+blockquote {
+  color: #7a7a7a;
+  border-left-color: #e5e5e5;
+}
+
+code {
+  color: #bf616a;
+  background-color: #f9f9f9;
+}
+pre {
+  background-color: #f9f9f9;
+}
+pre code {
+  color: inherit;
+  background-color: transparent;
+}
+
+hr {
+  border-top-color: #eee;
+  border-bottom-color: #fff;
+}
+
+.page-title,
+.post-title,
+.post-title a {
+  color: #303030;
+}
+
+.index .photo {
+  background-image:url('../images/c-bg-whiteshadow-square-200.png');
+}
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .index .photo {
+    background-image:url('../images/c-bg-whiteshadow-square-400.png');
+  }
+}
+
+.menu ul li a .photo {
+  background-image:url('../images/c-bg-white-square-200.png');
+}
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .menu ul li a .photo {
+    background-image:url('../images/c-bg-white-square-400.png');
+  }
+}
