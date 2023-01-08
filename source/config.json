@@ -6,7 +6,6 @@
     "taxonomy",
     "taxonomyTerm"
   ],
-  "pygmentsStyle": "monokailight",
   "disqusShortname": "leighmcculloch",
   "googleAnalytics": "UA-1756782-50",
   "permalinks": {
@@ -25,6 +24,9 @@
       "renderer": {
         "unsafe": true
       }
+    },
+    "highlight": {
+      "noClasses": false
     }
   }
 }

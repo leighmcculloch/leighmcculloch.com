@@ -15,7 +15,7 @@ strong {
 
 .index .links div a svg { fill: #aaa; }
 .index .links.site div:nth-child(1) a:hover svg { fill:#36465d; }
-.index .links.site div:nth-child(2) a:hover svg { fill:#ff0000; }
+.index .links.site div:nth-child(2) a:hover svg { fill:#36465d; }
 .index .links.social div:nth-child(1) a:hover svg { fill:#5855dc; }
 .index .links.social div:nth-child(2) a:hover svg { fill:#2daae1; }
 .index .links.social div:nth-child(3) a:hover svg { fill:#000; }
