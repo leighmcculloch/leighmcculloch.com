@@ -43,7 +43,7 @@ brew install sccache
 ```
 
 Then place the following in your shell files:
-```
+```bash
 export RUSTC_WRAPPER="$(which sccache)"
 ```
 
