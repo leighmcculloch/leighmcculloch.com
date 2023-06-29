@@ -16,11 +16,13 @@ strong {
 .index .links div a svg { fill: #aaa; }
 .index .links.site div:nth-child(1) a:hover svg { fill:#36465d; }
 .index .links.site div:nth-child(2) a:hover svg { fill:#36465d; }
-.index .links.social div:nth-child(1) a:hover svg { fill:#5855dc; }
-.index .links.social div:nth-child(2) a:hover svg { fill:#2daae1; }
-.index .links.social div:nth-child(3) a:hover svg { fill:#000; }
-.index .links.social div:nth-child(4) a:hover svg { fill:#007bb6; }
-.index .links.social div:nth-child(5) a:hover svg { fill:#fd6f31; }
+.index .links.social div:nth-child(1) a:hover svg { fill:#000; }
+.index .links.social div:nth-child(2) a:hover svg { fill:#000; }
+.index .links.social div:nth-child(3) a:hover svg { fill:#5855dc; }
+.index .links.social div:nth-child(4) a:hover svg { fill:#2daae1; }
+.index .links.social div:nth-child(5) a:hover svg { fill:#000; }
+.index .links.social div:nth-child(6) a:hover svg { fill:#007bb6; }
+.index .links.social div:nth-child(7) a:hover svg { fill:#fd6f31; }
 .index .links.money div:nth-child(1) a:hover svg { fill:#000; }
 
 blockquote {
