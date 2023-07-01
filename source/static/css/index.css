@@ -33,6 +33,13 @@
   display: inline-block;
   text-decoration: none;
 }
+.index .links div a span.label.addr {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+.index .links div a:hover span.label {
+  text-decoration: underline;
+}
 .index .links div a span {
   display: inline-block;
 }
@@ -47,7 +54,7 @@
   vertical-align: middle;
 }
 .index .links.social div a span.label {
-  display: none;
+  /* display: none; */
 }
 .index .links.money div a span.label {
   display: inline-block;
