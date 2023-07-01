@@ -12,7 +12,7 @@ import (
 	"github.com/go-chi/chi/middleware"
 )
 
-//go:embed source/public source/public/.well-known
+//go:embed source/public
 var public embed.FS
 
 var publicSub = func() fs.FS {
