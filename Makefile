@@ -7,5 +7,5 @@ clean:
 build: clean
 	hugo -s source
 
-deploy:
+deploy: build
 	wrangler pages deploy --project-name leighmcculloch ./source/public
