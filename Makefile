@@ -8,4 +8,4 @@ build: clean
 	hugo -s source
 
 deploy:
-	wrangler pages deploy --project-name leighmcculloch .
+	wrangler pages deploy --project-name leighmcculloch ./source/public
