@@ -8,4 +8,4 @@ build: clean
 	hugo -s source
 
 deploy:
-	fly deploy --strategy bluegreen
+	wrangler pages deploy --project-name leighmcculloch .
