@@ -50,11 +50,10 @@
   font-size: 1.3em;
 }
 .index .links div a span.label {
-  font-size: 0.8em;
   vertical-align: middle;
 }
 .index .links.social div a span.label {
-  /* display: none; */
+  font-size: 0.8em;
 }
 .index .links.money div a span.label {
   display: inline-block;
