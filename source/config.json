@@ -6,8 +6,6 @@
     "taxonomy",
     "taxonomyTerm"
   ],
-  "disqusShortname": "leighmcculloch",
-  "googleAnalytics": "UA-1756782-50",
   "permalinks": {
     "posts": "/posts/:slug",
     "talks": "/talks/:slug"

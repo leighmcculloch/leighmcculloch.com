@@ -58,20 +58,13 @@
   {{- end}}
 
   <!-- CSS -->
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/index.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/layout.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/colors-light.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/colors-dark.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/colors-highlight-light.css">
-  <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/colors-highlight-dark.css">
+  {{ $style := resources.Get "css/_.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link type="text/css" rel="stylesheet" href="{{ $style.Permalink }}">
 
   <!-- Icons -->
   <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
 
   <!-- RSS -->
-  <link type="application/rss+xml" rel="alternate" href="{{ .RSSLink }}" title="{{ .Site.Title }}" />
 </head>
 
 <body class="{{ .Site.Params.themeColor }}">
@@ -91,8 +84,6 @@
 
     {{ block "main" . -}}{{- end }}
   </div>
-
-  {{ template "_internal/google_analytics_async.html" . }}
 </body>
 
 </html>
