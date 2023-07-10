@@ -1,5 +1,5 @@
 dev:
-	hugo -s source server --bind 0.0.0.0 --port 9000
+	hugo -s source server
 
 clean:
 	rm -fr source/public
