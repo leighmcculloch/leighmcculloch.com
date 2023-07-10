@@ -1,11 +1,13 @@
+HUGO?=go run -tags extended github.com/gohugoio/hugo@v0.115.2
+
 dev:
-	hugo -s source server
+	$(HUGO) -s source server
 
 clean:
 	rm -fr source/public
 
 build: clean
-	hugo -s source
+	$(HUGO) -s source
 
 deploy: build
 	wrangler pages deploy --project-name leighmcculloch ./source/public
