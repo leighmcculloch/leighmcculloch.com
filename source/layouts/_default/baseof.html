@@ -65,6 +65,9 @@
   <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
 
   <!-- RSS -->
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link type="%s" rel="%s" href="%s" title="%s" />` .MediaType.Type .Rel .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
 </head>
 
 <body class="{{ .Site.Params.themeColor }}">
