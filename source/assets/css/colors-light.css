@@ -21,8 +21,9 @@ strong {
 .index .links.social div:nth-child(2) a:hover svg { fill:#000; }
 .index .links.social div:nth-child(3) a:hover svg { fill:#5855dc; }
 .index .links.social div:nth-child(4) a:hover svg { fill:#2daae1; }
-/* .index .links.social div:nth-child(5) a:hover svg { fill:#000; } // GitHub */
-.index .links.social div:nth-child(5) a:hover svg { fill:#007bb6; }
+.index .links.social div:nth-child(5) a:hover svg { fill:#000; }
+.index .links.social div:nth-child(6) a:hover svg { fill:#d15036; }
+.index .links.social div:nth-child(7) a:hover svg { fill:#007bb6; }
 /* .index .links.social div:nth-child(6) a:hover svg { fill:#fd6f31; } // Keybase */
 .index .links.money div:nth-child(1) a:hover svg { fill:#000; }
 

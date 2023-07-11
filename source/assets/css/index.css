@@ -29,6 +29,9 @@
   margin: 0 0.25em 0 0;
   display: inline-block;
 }
+.index .links.social div {
+  display: block;
+}
 .index .links div a {
   display: inline-block;
   text-decoration: none;
