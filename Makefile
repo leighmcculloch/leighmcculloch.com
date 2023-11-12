@@ -10,6 +10,3 @@ clean:
 
 build: clean
 	$(HUGO) -s source
-
-deploy: build
-	wrangler pages deploy --project-name leighmcculloch ./source/public
